@@ -439,9 +439,9 @@ export default function HomePage() {
             <a href="tel:6157853493" className="flex items-center gap-2 hover:text-white">
               <Phone size={14} /> (615) 785-3493
             </a>
-            <div className="flex items-center gap-2">
-              <MapPin size={14} /> Nashville, TN
-            </div>
+            <a href="/service-areas" className="flex items-center gap-2 hover:text-white">
+              <MapPin size={14} /> Serving Nashville, Hendersonville, Gallatin, Lebanon &amp; Mount Juliet, TN
+            </a>
           </div>
         </div>
         <div className="max-w-4xl mx-auto mt-8 pt-6 border-t border-white/10 text-xs text-center">

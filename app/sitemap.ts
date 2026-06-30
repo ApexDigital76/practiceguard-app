@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '',
     '/cyber-insurance',
     '/resources',
+    '/service-areas',
     '/blog',
     '/services/compliance-audit',
     '/services/managed-compliance',
