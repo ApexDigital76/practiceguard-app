@@ -153,9 +153,9 @@ export default function HomePage() {
             { value: '2026', label: 'Compliance Deadline' },
             { value: '240', label: 'Days to Comply' },
           ].map(s => (
-            <div key={s.label}>
-              <div className="text-2xl lg:text-3xl font-bold text-[#0b2340] whitespace-nowrap">{s.value}</div>
-              <div className="text-sm text-gray-500 mt-1">{s.label}</div>
+            <div key={s.label} className="min-w-0 px-1">
+              <div className="text-xl lg:text-3xl font-bold text-[#0b2340] break-words">{s.value}</div>
+              <div className="text-xs lg:text-sm text-gray-500 mt-1">{s.label}</div>
             </div>
           ))}
         </div>
