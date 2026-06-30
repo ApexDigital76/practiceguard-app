@@ -100,7 +100,8 @@ export default function HomePage() {
             </div>
           </aside>
 
-          <div className="flex-1 text-center md:text-left">
+          {/* Center: headline + buttons */}
+          <div className="flex-1 text-left">
             <div className="inline-flex items-center gap-2 bg-[#c9a84c]/20 text-[#c9a84c] px-3 py-1 rounded-full text-sm font-medium mb-6">
               <AlertTriangle size={14} />
               2026 HIPAA Security Rule Update — 240 Days to Comply
@@ -109,7 +110,7 @@ export default function HomePage() {
               Is Your Practice Ready for<br />
               <span className="text-[#c9a84c]">HIPAA&apos;s Biggest Update Since 2003?</span>
             </h1>
-            <p className="text-white/70 text-lg mb-10 max-w-2xl">
+            <p className="text-white/70 text-lg mb-10 max-w-xl">
               The 2026 HIPAA Security Rule brings mandatory MFA, encryption, pen testing, and more.
               OCR fines average $6.6M. We help small practices get compliant — fast and affordably.
             </p>
@@ -121,17 +122,19 @@ export default function HomePage() {
                 View Services
               </a>
             </div>
-            <div className="flex-shrink-0 flex flex-col items-center gap-4 mt-6">
-              <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-[#c9a84c]">
-                <img src="/dallas.jpg" alt="Dallas Mitchell" className="w-full h-full object-cover" />
-              </div>
-              <div className="text-center text-sm text-white/70">
-                <div className="font-semibold text-white">Dallas Mitchell</div>
-                <div>Founder · 25+ Years Healthcare IT</div>
-                <div>Gallatin, TN</div>
-              </div>
+          </div>
+
+          {/* Right: photo */}
+          <div className="flex-shrink-0 flex flex-col items-center gap-3">
+            <div className="w-52 h-52 rounded-full overflow-hidden border-4 border-[#c9a84c]">
+              <img src="/dallas.jpg" alt="Dallas Mitchell" className="w-full h-full object-cover" />
             </div>
-          </div>{/* end flex-1 */}
+            <div className="text-center text-sm text-white/70">
+              <div className="font-semibold text-white">Dallas Mitchell</div>
+              <div>Founder · 25+ Years Healthcare IT</div>
+              <div>Gallatin, TN</div>
+            </div>
+          </div>
         </div>
       </section>
 
