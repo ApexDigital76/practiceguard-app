@@ -29,12 +29,12 @@ const CONCERNS = [
 ]
 
 const CHANGES = [
-  { title: 'Multi-Factor Authentication', desc: 'Required for all systems accessing PHI' },
-  { title: 'Data Encryption', desc: 'At rest and in transit for all PHI' },
-  { title: 'Vulnerability Scanning', desc: 'Quarterly scans now mandatory' },
-  { title: 'Penetration Testing', desc: 'Annual pen tests required' },
-  { title: 'Incident Response Plan', desc: 'Documented and tested procedures' },
-  { title: 'Asset Inventory', desc: 'All PHI-touching devices catalogued' },
+  { title: 'Multi-Factor Authentication', desc: 'Required for all systems accessing PHI', slug: 'multi-factor-authentication' },
+  { title: 'Data Encryption', desc: 'At rest and in transit for all PHI', slug: 'data-encryption' },
+  { title: 'Vulnerability Scanning', desc: 'Quarterly scans now mandatory', slug: 'vulnerability-scanning' },
+  { title: 'Penetration Testing', desc: 'Annual pen tests required', slug: 'penetration-testing' },
+  { title: 'Incident Response Plan', desc: 'Documented and tested procedures', slug: 'incident-response-plan' },
+  { title: 'Asset Inventory', desc: 'All PHI-touching devices catalogued', slug: 'asset-inventory' },
 ]
 
 const SERVICES = [
@@ -168,11 +168,12 @@ export default function HomePage() {
           <p className="text-gray-500 text-center mb-12">New mandatory requirements your practice must meet</p>
           <div className="grid md:grid-cols-3 gap-6">
             {CHANGES.map(c => (
-              <div key={c.title} className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md transition-shadow">
+              <a key={c.title} href={`/changes/${c.slug}`} className="block bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-[#14b8a6]/40 transition-all">
                 <CheckCircle className="text-[#14b8a6] mb-3" size={20} />
                 <div className="font-semibold text-gray-900 mb-1">{c.title}</div>
-                <div className="text-sm text-gray-500">{c.desc}</div>
-              </div>
+                <div className="text-sm text-gray-500 mb-2">{c.desc}</div>
+                <div className="text-xs text-[#14b8a6] font-medium">Learn what this means →</div>
+              </a>
             ))}
           </div>
         </div>
