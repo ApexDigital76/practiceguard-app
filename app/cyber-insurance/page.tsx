@@ -134,23 +134,63 @@ export default function CyberInsurancePage() {
         </div>
       </section>
 
-      {/* What insurers require */}
+      {/* What insurers require + Sidebar */}
       <section className="py-20 px-6">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#0b2340] text-center mb-3">What Cyber Insurers Require</h2>
-          <p className="text-gray-500 text-center mb-12">Most practices fail 3–4 of these. We fix all of them.</p>
-          <div className="grid md:grid-cols-2 gap-6">
-            {AUDIT_REQUIREMENTS.map(({ icon: Icon, title, desc }) => (
-              <div key={title} className="flex gap-4 p-6 bg-gray-50 rounded-xl border border-gray-100">
-                <div className="w-10 h-10 bg-[#0b2340] rounded-lg flex items-center justify-center flex-shrink-0">
-                  <Icon className="text-[#c9a84c]" size={18} />
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10">
+
+          {/* Sidebar */}
+          <aside className="lg:w-72 flex-shrink-0">
+            <div className="sticky top-24">
+              <div className="bg-[#0b2340] rounded-2xl p-5 text-white mb-4">
+                <div className="text-[#c9a84c] font-bold text-xs uppercase tracking-wide mb-3">Real Attack Case Studies</div>
+                <p className="text-white/60 text-xs mb-4">These incidents happened to real dental and medical practices. Read what went wrong.</p>
+                <div className="space-y-3">
+                  {[
+                    { tag: 'National', color: 'bg-red-500/20 text-red-300', title: 'Change Healthcare (2024)', desc: '190M patient records stolen. All from one missing MFA checkbox.', href: '/resources#change-healthcare' },
+                    { tag: 'Dental', color: 'bg-amber-500/20 text-amber-300', title: '400+ Dental Practices Hit at Once', desc: 'One ransomware strain propagated through shared dental IT systems nationwide.', href: '/resources#dental-400' },
+                    { tag: '2025', color: 'bg-orange-500/20 text-orange-300', title: 'Absolute Dental — 1.2M Patients', desc: '50+ locations, 1.2 million patient records exposed. OCR investigation opened.', href: '/resources#absolute-dental' },
+                    { tag: 'Small Practice', color: 'bg-blue-500/20 text-blue-300', title: '"We Were Too Small to Target"', desc: '$180K loss. 3 weeks offline. Nearly closed for good.', href: '/resources#small-practice' },
+                  ].map(({ tag, color, title, desc, href }) => (
+                    <Link key={title} href={href} className="block bg-white/5 hover:bg-white/10 rounded-xl p-4 transition-colors group">
+                      <span className={`inline-block text-xs font-semibold px-2 py-0.5 rounded-full mb-2 ${color}`}>{tag}</span>
+                      <div className="text-sm font-semibold text-white group-hover:text-[#c9a84c] transition-colors mb-1">{title}</div>
+                      <div className="text-xs text-white/50">{desc}</div>
+                    </Link>
+                  ))}
                 </div>
-                <div>
-                  <div className="font-semibold text-gray-900 mb-1">{title}</div>
-                  <div className="text-sm text-gray-500">{desc}</div>
-                </div>
+                <Link href="/resources" className="block mt-4 text-center text-xs text-[#c9a84c] hover:underline">
+                  View all case studies →
+                </Link>
               </div>
-            ))}
+
+              {/* Quick CTA */}
+              <div className="bg-[#c9a84c] rounded-2xl p-5 text-[#0b2340]">
+                <div className="font-bold text-sm mb-2">Don&apos;t be the next case study.</div>
+                <p className="text-xs text-[#0b2340]/70 mb-3">Get a free 30-minute cyber risk assessment and know exactly where your practice stands.</p>
+                <a href="#assessment" className="block text-center bg-[#0b2340] text-white text-xs font-bold py-2.5 rounded-lg hover:bg-[#0b2340]/90 transition-colors">
+                  Get Free Assessment
+                </a>
+              </div>
+            </div>
+          </aside>
+
+          {/* Main content */}
+          <div className="flex-1">
+            <h2 className="text-3xl font-bold text-[#0b2340] mb-3">What Cyber Insurers Require</h2>
+            <p className="text-gray-500 mb-8">Most practices fail 3–4 of these. We fix all of them.</p>
+            <div className="grid sm:grid-cols-2 gap-6">
+              {AUDIT_REQUIREMENTS.map(({ icon: Icon, title, desc }) => (
+                <div key={title} className="flex gap-4 p-6 bg-gray-50 rounded-xl border border-gray-100">
+                  <div className="w-10 h-10 bg-[#0b2340] rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Icon className="text-[#c9a84c]" size={18} />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-gray-900 mb-1">{title}</div>
+                    <div className="text-sm text-gray-500">{desc}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
