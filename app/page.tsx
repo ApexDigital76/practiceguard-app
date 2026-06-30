@@ -78,6 +78,7 @@ export default function HomePage() {
         </div>
         <div className="hidden md:flex items-center gap-8 text-sm text-white/70">
           <a href="#changes" className="hover:text-white">What&apos;s Changing</a>
+          <a href="/cyber-insurance" className="hover:text-white">Cyber Protection</a>
           <a href="#services" className="hover:text-white">Services</a>
           <a href="#about" className="hover:text-white">About</a>
         </div>
@@ -160,6 +161,66 @@ export default function HomePage() {
                 <div className="text-white/60 text-sm">{s.desc}</div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Cyber Insurance Readiness */}
+      <section className="py-20 px-6 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium mb-4">
+                <Shield size={14} />
+                Cyber Attack Prevention
+              </div>
+              <h2 className="text-3xl font-bold text-[#0b2340] mb-4">
+                Is Your Practice Ready for a Cyber Attack — or a Cyber Insurance Audit?
+              </h2>
+              <p className="text-gray-600 mb-4">
+                Ransomware attacks on dental practices jumped 78% in 2024. Most cyber insurance carriers now require practices to meet strict security standards before they&apos;ll issue a policy — and many are being denied at renewal.
+              </p>
+              <p className="text-gray-600 mb-6">
+                PracticeGuard helps you get audit-ready fast, so you can qualify for coverage and actually survive an attack if one happens.
+              </p>
+              <div className="grid grid-cols-2 gap-3 mb-8">
+                {[
+                  'Multi-Factor Authentication',
+                  'Data Backup & Recovery',
+                  'Staff Security Training',
+                  'Incident Response Plan',
+                  'Endpoint Protection',
+                  'Vulnerability Scanning',
+                ].map(item => (
+                  <div key={item} className="flex items-center gap-2 text-sm text-gray-700">
+                    <CheckCircle className="text-[#c9a84c] flex-shrink-0" size={16} />
+                    {item}
+                  </div>
+                ))}
+              </div>
+              <a
+                href="/cyber-insurance"
+                className="inline-block bg-[#0b2340] text-white font-bold px-8 py-4 rounded-lg hover:bg-[#0b2340]/90 transition-colors"
+              >
+                Learn About Cyber Protection →
+              </a>
+            </div>
+            <div className="bg-[#0b2340] rounded-2xl p-8 text-white">
+              <div className="text-[#c9a84c] font-bold text-sm mb-4 uppercase tracking-wide">The Reality</div>
+              <div className="space-y-5">
+                {[
+                  { stat: '78%', label: 'increase in ransomware attacks on healthcare practices in 2024' },
+                  { stat: '$1.27M', label: 'average cost of a healthcare ransomware attack including downtime' },
+                  { stat: '60%', label: 'of small practices that suffer a major breach close within 6 months' },
+                  { stat: '3 in 4', label: 'cyber insurers now require a formal security assessment before coverage' },
+                ].map(({ stat, label }) => (
+                  <div key={stat} className="border-b border-white/10 pb-4 last:border-0 last:pb-0">
+                    <div className="text-3xl font-bold text-[#c9a84c]">{stat}</div>
+                    <div className="text-white/70 text-sm mt-1">{label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
