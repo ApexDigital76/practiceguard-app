@@ -106,9 +106,16 @@ export default function HomePage() {
               <AlertTriangle size={14} />
               2026 HIPAA Security Rule Update — 240 Days to Comply
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6 leading-tight">
-              Is Your Practice Ready for<br />
-              <span className="text-[#14b8a6]">HIPAA&apos;s Biggest Update Since 2003?</span>
+            <div className="flex items-start justify-between gap-3 mb-1 lg:mb-0">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+                Is Your Practice Ready for
+              </h1>
+              <div className="lg:hidden flex-shrink-0 w-16 h-16 rounded-full overflow-hidden border-2 border-[#14b8a6] mt-1">
+                <img src="/dallas.jpg" alt="Dallas Mitchell" className="w-full h-full object-cover" />
+              </div>
+            </div>
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6 leading-tight text-[#14b8a6]">
+              HIPAA&apos;s Biggest Update Since 2003?
             </h1>
             <p className="text-white/70 text-base lg:text-lg mb-8 lg:mb-10 max-w-xl">
               The 2026 HIPAA Security Rule brings mandatory MFA, encryption, pen testing, and more.
