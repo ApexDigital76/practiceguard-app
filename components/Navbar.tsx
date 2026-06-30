@@ -10,6 +10,7 @@ const NAV_LINKS = [
   { href: '/#changes', label: "What's Changing" },
   { href: '/cyber-insurance', label: 'Cyber Protection' },
   { href: '/resources', label: 'Threat Resources' },
+  { href: '/blog', label: 'Blog' },
   { href: '/#services', label: 'Services' },
   { href: '/#about', label: 'About' },
   { href: '/#contact', label: 'Contact' },
