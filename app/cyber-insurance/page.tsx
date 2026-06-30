@@ -77,11 +77,11 @@ export default function CyberInsurancePage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="bg-[#0b2340] text-white py-16 px-6">
+      <section className="bg-[#0b2340] text-white py-10 lg:py-16 px-6">
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 items-start">
 
-          {/* Case Study Sidebar — upper left */}
-          <aside className="lg:w-64 flex-shrink-0">
+          {/* Case Study Sidebar — hidden on mobile */}
+          <aside className="hidden lg:block lg:w-64 flex-shrink-0">
             <div className="bg-white/5 border border-white/10 rounded-2xl p-5 text-white">
               <div className="text-[#14b8a6] font-bold text-xs uppercase tracking-wide mb-3">Real Attack Case Studies</div>
               <p className="text-white/60 text-xs mb-4">These incidents happened to real dental and medical practices.</p>
@@ -111,11 +111,11 @@ export default function CyberInsurancePage() {
               <AlertTriangle size={14} />
               Cyber Attack Prevention & Insurance Readiness
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6 leading-tight">
               Protect Your Practice.<br />
               <span className="text-[#14b8a6]">Qualify for Cyber Insurance.</span>
             </h1>
-            <p className="text-white/70 text-lg mb-8 max-w-2xl">
+            <p className="text-white/70 text-base lg:text-lg mb-6 lg:mb-8 max-w-2xl">
               Ransomware doesn&apos;t discriminate by practice size. We help dental and medical practices implement the exact security controls that prevent attacks — and satisfy insurance auditors.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">

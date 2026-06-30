@@ -74,11 +74,11 @@ export default function HomePage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="bg-[#0b2340] text-white py-16 px-6">
+      <section className="bg-[#0b2340] text-white py-10 lg:py-16 px-6">
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-start gap-10">
 
-          {/* Case Study Sidebar — upper left */}
-          <aside className="lg:w-60 flex-shrink-0 w-full">
+          {/* Case Study Sidebar — hidden on mobile, visible on desktop */}
+          <aside className="hidden lg:block lg:w-60 flex-shrink-0">
             <div className="bg-white/5 border border-white/10 rounded-2xl p-5 text-white">
               <div className="text-[#14b8a6] font-bold text-xs uppercase tracking-wide mb-3">Real Attack Case Studies</div>
               <p className="text-white/60 text-xs mb-4">These incidents happened to real dental and medical practices.</p>
@@ -102,15 +102,15 @@ export default function HomePage() {
 
           {/* Center: headline + buttons */}
           <div className="flex-1 text-left">
-            <div className="inline-flex items-center gap-2 bg-[#14b8a6]/20 text-[#14b8a6] px-3 py-1 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 bg-[#14b8a6]/20 text-[#14b8a6] px-3 py-1 rounded-full text-sm font-medium mb-4 lg:mb-6">
               <AlertTriangle size={14} />
               2026 HIPAA Security Rule Update — 240 Days to Comply
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6 leading-tight">
               Is Your Practice Ready for<br />
               <span className="text-[#14b8a6]">HIPAA&apos;s Biggest Update Since 2003?</span>
             </h1>
-            <p className="text-white/70 text-lg mb-10 max-w-xl">
+            <p className="text-white/70 text-base lg:text-lg mb-8 lg:mb-10 max-w-xl">
               The 2026 HIPAA Security Rule brings mandatory MFA, encryption, pen testing, and more.
               OCR fines average $6.6M. We help small practices get compliant — fast and affordably.
             </p>
@@ -124,8 +124,8 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Right: photo */}
-          <div className="flex-shrink-0 flex flex-col items-center gap-3">
+          {/* Right: photo — hidden on mobile */}
+          <div className="hidden lg:flex flex-shrink-0 flex-col items-center gap-3">
             <div className="w-52 h-52 rounded-full overflow-hidden border-4 border-[#14b8a6]">
               <img src="/dallas.jpg" alt="Dallas Mitchell" className="w-full h-full object-cover" />
             </div>
@@ -140,7 +140,7 @@ export default function HomePage() {
 
       {/* Stats */}
       <section className="py-12 px-6 bg-gray-50 border-b">
-        <div className="max-w-4xl mx-auto grid grid-cols-3 gap-8 text-center">
+        <div className="max-w-4xl mx-auto grid grid-cols-3 gap-4 lg:gap-8 text-center">
           {[
             { value: '$6.6M', label: 'Average OCR Fine' },
             { value: '2026', label: 'Compliance Deadline' },
