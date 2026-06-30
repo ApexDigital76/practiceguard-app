@@ -72,10 +72,10 @@ export default function HomePage() {
     <div className="min-h-screen bg-white">
       {/* Nav */}
       <nav className="sticky top-0 z-50 bg-[#0b2340] text-white px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
           <Shield className="text-[#c9a84c]" size={22} />
           <span className="font-bold text-lg">PracticeGuard</span>
-        </div>
+        </a>
         <div className="hidden md:flex items-center gap-8 text-sm text-white/70">
           <a href="#changes" className="hover:text-white">What&apos;s Changing</a>
           <a href="/cyber-insurance" className="hover:text-white">Cyber Protection</a>

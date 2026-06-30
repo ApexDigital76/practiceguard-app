@@ -75,10 +75,10 @@ export default function CyberInsurancePage() {
     <div className="min-h-screen bg-white">
       {/* Nav */}
       <nav className="sticky top-0 z-50 bg-[#0b2340] text-white px-6 py-4 flex items-center justify-between">
-        <div className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
           <Shield className="text-[#c9a84c]" size={22} />
           <span className="font-bold text-lg">PracticeGuard</span>
-        </div>
+        </Link>
         <Link href="/" className="flex items-center gap-2 text-white/70 hover:text-white text-sm transition-colors">
           <ArrowLeft size={16} />
           Back to Home
