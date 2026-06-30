@@ -99,6 +99,20 @@ export default function CyberInsurancePage() {
           <p className="text-white/70 text-lg mb-8 max-w-2xl">
             Ransomware doesn&apos;t discriminate by practice size. We help dental and medical practices implement the exact security controls that prevent attacks — and satisfy insurance auditors.
           </p>
+          <div className="flex flex-col sm:flex-row gap-4 mb-10">
+            <a
+              href="#assessment"
+              className="bg-[#c9a84c] text-[#0b2340] font-bold px-8 py-4 rounded-lg hover:bg-[#c9a84c]/90 transition-colors text-center"
+            >
+              Get My Free Cyber Risk Assessment
+            </a>
+            <a
+              href="tel:6157853493"
+              className="border border-white/30 text-white px-8 py-4 rounded-lg hover:bg-white/5 transition-colors text-center"
+            >
+              Call (615) 785-3493
+            </a>
+          </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { value: '78%', label: 'Rise in healthcare ransomware (2024)' },
@@ -156,7 +170,7 @@ export default function CyberInsurancePage() {
       </section>
 
       {/* Contact Form */}
-      <section className="py-20 px-6 bg-gray-50">
+      <section id="assessment" className="py-20 px-6 bg-gray-50">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl font-bold text-[#0b2340] text-center mb-3">Get Your Free Cyber Risk Assessment</h2>
           <p className="text-gray-500 text-center mb-10">30 minutes. No obligation. Know exactly where your practice stands.</p>
