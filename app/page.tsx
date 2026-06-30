@@ -228,7 +228,9 @@ export default function HomePage() {
       {/* About */}
       <section id="about" className="py-20 px-6">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-12 items-center">
-          <div className="w-48 h-48 rounded-full bg-[#0b2340] flex-shrink-0 overflow-hidden border-4 border-[#c9a84c]" />
+          <div className="w-48 h-48 rounded-full flex-shrink-0 overflow-hidden border-4 border-[#c9a84c]">
+            <img src="/dallas.jpg" alt="Dallas Mitchell" className="w-full h-full object-cover" />
+          </div>
           <div>
             <h2 className="text-3xl font-bold text-[#0b2340] mb-4">Dallas Mitchell</h2>
             <p className="text-gray-600 mb-4">
