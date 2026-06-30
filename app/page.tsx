@@ -89,26 +89,38 @@ export default function HomePage() {
 
       {/* Hero */}
       <section className="bg-[#0b2340] text-white py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-[#c9a84c]/20 text-[#c9a84c] px-3 py-1 rounded-full text-sm font-medium mb-6">
-            <AlertTriangle size={14} />
-            2026 HIPAA Security Rule Update — 240 Days to Comply
+        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12">
+          <div className="flex-1 text-center md:text-left">
+            <div className="inline-flex items-center gap-2 bg-[#c9a84c]/20 text-[#c9a84c] px-3 py-1 rounded-full text-sm font-medium mb-6">
+              <AlertTriangle size={14} />
+              2026 HIPAA Security Rule Update — 240 Days to Comply
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              Is Your Practice Ready for<br />
+              <span className="text-[#c9a84c]">HIPAA&apos;s Biggest Update Since 2003?</span>
+            </h1>
+            <p className="text-white/70 text-lg mb-10 max-w-2xl">
+              The 2026 HIPAA Security Rule brings mandatory MFA, encryption, pen testing, and more.
+              OCR fines average $6.6M. We help small practices get compliant — fast and affordably.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href="#contact" className="bg-[#c9a84c] text-[#0b2340] font-bold px-8 py-4 rounded-lg hover:bg-[#c9a84c]/90 text-center">
+                Get My Free Readiness Check
+              </a>
+              <a href="#services" className="border border-white/30 text-white px-8 py-4 rounded-lg hover:bg-white/5 text-center">
+                View Services
+              </a>
+            </div>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            Is Your Practice Ready for<br />
-            <span className="text-[#c9a84c]">HIPAA&apos;s Biggest Update Since 2003?</span>
-          </h1>
-          <p className="text-white/70 text-lg mb-10 max-w-2xl mx-auto">
-            The 2026 HIPAA Security Rule brings mandatory MFA, encryption, pen testing, and more.
-            OCR fines average $6.6M. We help small practices get compliant — fast and affordably.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#contact" className="bg-[#c9a84c] text-[#0b2340] font-bold px-8 py-4 rounded-lg hover:bg-[#c9a84c]/90">
-              Get My Free Readiness Check
-            </a>
-            <a href="#services" className="border border-white/30 text-white px-8 py-4 rounded-lg hover:bg-white/5">
-              View Services
-            </a>
+          <div className="flex-shrink-0 flex flex-col items-center gap-4">
+            <div className="w-52 h-52 rounded-full overflow-hidden border-4 border-[#c9a84c]">
+              <img src="/dallas.jpg" alt="Dallas Mitchell" className="w-full h-full object-cover" />
+            </div>
+            <div className="text-center text-sm text-white/70">
+              <div className="font-semibold text-white">Dallas Mitchell</div>
+              <div>Founder · 25+ Years Healthcare IT</div>
+              <div>Gallatin, TN</div>
+            </div>
           </div>
         </div>
       </section>
