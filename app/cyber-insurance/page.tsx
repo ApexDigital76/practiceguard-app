@@ -77,98 +77,77 @@ export default function CyberInsurancePage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="bg-[#0b2340] text-white py-20 px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 bg-red-500/20 text-red-300 px-3 py-1 rounded-full text-sm font-medium mb-6">
-            <AlertTriangle size={14} />
-            Cyber Attack Prevention & Insurance Readiness
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-            Protect Your Practice.<br />
-            <span className="text-[#c9a84c]">Qualify for Cyber Insurance.</span>
-          </h1>
-          <p className="text-white/70 text-lg mb-8 max-w-2xl">
-            Ransomware doesn&apos;t discriminate by practice size. We help dental and medical practices implement the exact security controls that prevent attacks — and satisfy insurance auditors.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 mb-6">
-            <a
-              href="#assessment"
-              className="bg-[#c9a84c] text-[#0b2340] font-bold px-8 py-4 rounded-lg hover:bg-[#c9a84c]/90 transition-colors text-center"
-            >
-              Get My Free Cyber Risk Assessment
-            </a>
-            <a
-              href="tel:6157853493"
-              className="border border-white/30 text-white px-8 py-4 rounded-lg hover:bg-white/5 transition-colors text-center"
-            >
-              Call (615) 785-3493
-            </a>
-          </div>
-          <div className="mb-10">
-            <Link href="/resources" className="inline-flex items-center gap-2 text-white/60 hover:text-white text-sm underline underline-offset-4 transition-colors">
-              Read real attack case studies from dental practices like yours →
-            </Link>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { value: '78%', label: 'Rise in healthcare ransomware (2024)' },
-              { value: '$1.27M', label: 'Avg. attack cost with downtime' },
-              { value: '3 in 4', label: 'Insurers require security audit' },
-              { value: '60%', label: 'Breached practices close in 6 months' },
-            ].map(s => (
-              <div key={s.label} className="bg-white/5 border border-white/10 rounded-xl p-4">
-                <div className="text-2xl font-bold text-[#c9a84c]">{s.value}</div>
-                <div className="text-white/60 text-xs mt-1">{s.label}</div>
+      <section className="bg-[#0b2340] text-white py-16 px-6">
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 items-start">
+
+          {/* Case Study Sidebar — upper left */}
+          <aside className="lg:w-64 flex-shrink-0">
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-5 text-white">
+              <div className="text-[#c9a84c] font-bold text-xs uppercase tracking-wide mb-3">Real Attack Case Studies</div>
+              <p className="text-white/60 text-xs mb-4">These incidents happened to real dental and medical practices.</p>
+              <div className="space-y-3">
+                {[
+                  { tag: 'National', color: 'bg-red-500/20 text-red-300', title: 'Change Healthcare (2024)', desc: '190M records stolen. One missing MFA checkbox.' },
+                  { tag: 'Dental', color: 'bg-amber-500/20 text-amber-300', title: '400+ Practices Hit at Once', desc: 'Ransomware spread through shared dental IT systems.' },
+                  { tag: '2025', color: 'bg-orange-500/20 text-orange-300', title: 'Absolute Dental — 1.2M Patients', desc: '50+ locations, OCR investigation opened.' },
+                  { tag: 'Small Practice', color: 'bg-blue-500/20 text-blue-300', title: '"Too Small to Target"', desc: '$180K loss. 3 weeks offline. Nearly closed.' },
+                ].map(({ tag, color, title, desc }) => (
+                  <Link key={title} href="/resources" className="block bg-white/5 hover:bg-white/10 rounded-xl p-3 transition-colors group">
+                    <span className={`inline-block text-xs font-semibold px-2 py-0.5 rounded-full mb-1.5 ${color}`}>{tag}</span>
+                    <div className="text-sm font-semibold text-white group-hover:text-[#c9a84c] transition-colors mb-0.5">{title}</div>
+                    <div className="text-xs text-white/50">{desc}</div>
+                  </Link>
+                ))}
               </div>
-            ))}
+              <Link href="/resources" className="block mt-4 text-center text-xs text-[#c9a84c] hover:underline">
+                View all case studies →
+              </Link>
+            </div>
+          </aside>
+
+          {/* Hero content */}
+          <div className="flex-1">
+            <div className="inline-flex items-center gap-2 bg-red-500/20 text-red-300 px-3 py-1 rounded-full text-sm font-medium mb-6">
+              <AlertTriangle size={14} />
+              Cyber Attack Prevention & Insurance Readiness
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+              Protect Your Practice.<br />
+              <span className="text-[#c9a84c]">Qualify for Cyber Insurance.</span>
+            </h1>
+            <p className="text-white/70 text-lg mb-8 max-w-2xl">
+              Ransomware doesn&apos;t discriminate by practice size. We help dental and medical practices implement the exact security controls that prevent attacks — and satisfy insurance auditors.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <a href="#assessment" className="bg-[#c9a84c] text-[#0b2340] font-bold px-8 py-4 rounded-lg hover:bg-[#c9a84c]/90 transition-colors text-center">
+                Get My Free Cyber Risk Assessment
+              </a>
+              <a href="tel:6157853493" className="border border-white/30 text-white px-8 py-4 rounded-lg hover:bg-white/5 transition-colors text-center">
+                Call (615) 785-3493
+              </a>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {[
+                { value: '78%', label: 'Rise in healthcare ransomware (2024)' },
+                { value: '$1.27M', label: 'Avg. attack cost with downtime' },
+                { value: '3 in 4', label: 'Insurers require security audit' },
+                { value: '60%', label: 'Breached practices close in 6 months' },
+              ].map(s => (
+                <div key={s.label} className="bg-white/5 border border-white/10 rounded-xl p-4">
+                  <div className="text-2xl font-bold text-[#c9a84c]">{s.value}</div>
+                  <div className="text-white/60 text-xs mt-1">{s.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* What insurers require + Sidebar */}
+      {/* What insurers require */}
       <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10">
-
-          {/* Sidebar */}
-          <aside className="lg:w-72 flex-shrink-0">
-            <div className="sticky top-24">
-              <div className="bg-[#0b2340] rounded-2xl p-5 text-white mb-4">
-                <div className="text-[#c9a84c] font-bold text-xs uppercase tracking-wide mb-3">Real Attack Case Studies</div>
-                <p className="text-white/60 text-xs mb-4">These incidents happened to real dental and medical practices. Read what went wrong.</p>
-                <div className="space-y-3">
-                  {[
-                    { tag: 'National', color: 'bg-red-500/20 text-red-300', title: 'Change Healthcare (2024)', desc: '190M patient records stolen. All from one missing MFA checkbox.', href: '/resources#change-healthcare' },
-                    { tag: 'Dental', color: 'bg-amber-500/20 text-amber-300', title: '400+ Dental Practices Hit at Once', desc: 'One ransomware strain propagated through shared dental IT systems nationwide.', href: '/resources#dental-400' },
-                    { tag: '2025', color: 'bg-orange-500/20 text-orange-300', title: 'Absolute Dental — 1.2M Patients', desc: '50+ locations, 1.2 million patient records exposed. OCR investigation opened.', href: '/resources#absolute-dental' },
-                    { tag: 'Small Practice', color: 'bg-blue-500/20 text-blue-300', title: '"We Were Too Small to Target"', desc: '$180K loss. 3 weeks offline. Nearly closed for good.', href: '/resources#small-practice' },
-                  ].map(({ tag, color, title, desc, href }) => (
-                    <Link key={title} href={href} className="block bg-white/5 hover:bg-white/10 rounded-xl p-4 transition-colors group">
-                      <span className={`inline-block text-xs font-semibold px-2 py-0.5 rounded-full mb-2 ${color}`}>{tag}</span>
-                      <div className="text-sm font-semibold text-white group-hover:text-[#c9a84c] transition-colors mb-1">{title}</div>
-                      <div className="text-xs text-white/50">{desc}</div>
-                    </Link>
-                  ))}
-                </div>
-                <Link href="/resources" className="block mt-4 text-center text-xs text-[#c9a84c] hover:underline">
-                  View all case studies →
-                </Link>
-              </div>
-
-              {/* Quick CTA */}
-              <div className="bg-[#c9a84c] rounded-2xl p-5 text-[#0b2340]">
-                <div className="font-bold text-sm mb-2">Don&apos;t be the next case study.</div>
-                <p className="text-xs text-[#0b2340]/70 mb-3">Get a free 30-minute cyber risk assessment and know exactly where your practice stands.</p>
-                <a href="#assessment" className="block text-center bg-[#0b2340] text-white text-xs font-bold py-2.5 rounded-lg hover:bg-[#0b2340]/90 transition-colors">
-                  Get Free Assessment
-                </a>
-              </div>
-            </div>
-          </aside>
-
-          {/* Main content */}
-          <div className="flex-1">
-            <h2 className="text-3xl font-bold text-[#0b2340] mb-3">What Cyber Insurers Require</h2>
-            <p className="text-gray-500 mb-8">Most practices fail 3–4 of these. We fix all of them.</p>
+        <div className="max-w-5xl mx-auto">
+            <h2 className="text-3xl font-bold text-[#0b2340] mb-3 text-center">What Cyber Insurers Require</h2>
+            <p className="text-gray-500 mb-8 text-center">Most practices fail 3–4 of these. We fix all of them.</p>
             <div className="grid sm:grid-cols-2 gap-6">
               {AUDIT_REQUIREMENTS.map(({ icon: Icon, title, desc }) => (
                 <div key={title} className="flex gap-4 p-6 bg-gray-50 rounded-xl border border-gray-100">
@@ -182,7 +161,6 @@ export default function CyberInsurancePage() {
                 </div>
               ))}
             </div>
-          </div>
         </div>
       </section>
 
