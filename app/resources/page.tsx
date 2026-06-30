@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link'
-import { AlertTriangle, CheckCircle, Phone, Mail, ExternalLink, TrendingUp, DollarSign, Clock, Users } from 'lucide-react'
+import { Shield, AlertTriangle, CheckCircle, Phone, Mail, ExternalLink, TrendingUp, DollarSign, Clock, Users } from 'lucide-react'
 import Navbar from '@/components/Navbar'
 
 const STATS = [
