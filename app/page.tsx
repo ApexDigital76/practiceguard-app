@@ -165,7 +165,35 @@ export default function HomePage() {
 
       {/* Cyber Insurance Readiness */}
       <section className="py-20 px-6 bg-gray-50">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 items-start">
+
+          {/* Case study sidebar */}
+          <aside className="lg:w-64 flex-shrink-0">
+            <div className="bg-[#0b2340] rounded-2xl p-5 text-white">
+              <div className="text-[#c9a84c] font-bold text-xs uppercase tracking-wide mb-3">Real Attack Case Studies</div>
+              <p className="text-white/60 text-xs mb-4">These incidents happened to real dental and medical practices.</p>
+              <div className="space-y-3">
+                {[
+                  { tag: 'National', color: 'bg-red-500/20 text-red-300', title: 'Change Healthcare (2024)', desc: '190M records stolen. One missing MFA checkbox.' },
+                  { tag: 'Dental', color: 'bg-amber-500/20 text-amber-300', title: '400+ Practices Hit at Once', desc: 'Ransomware spread through shared dental IT systems.' },
+                  { tag: '2025', color: 'bg-orange-500/20 text-orange-300', title: 'Absolute Dental — 1.2M Patients', desc: '50+ locations, OCR investigation opened.' },
+                  { tag: 'Small Practice', color: 'bg-blue-500/20 text-blue-300', title: '"Too Small to Target"', desc: '$180K loss. 3 weeks offline. Nearly closed.' },
+                ].map(({ tag, color, title, desc }) => (
+                  <a key={title} href="/resources" className="block bg-white/5 hover:bg-white/10 rounded-xl p-4 transition-colors group">
+                    <span className={`inline-block text-xs font-semibold px-2 py-0.5 rounded-full mb-2 ${color}`}>{tag}</span>
+                    <div className="text-sm font-semibold text-white group-hover:text-[#c9a84c] transition-colors mb-1">{title}</div>
+                    <div className="text-xs text-white/50">{desc}</div>
+                  </a>
+                ))}
+              </div>
+              <a href="/resources" className="block mt-4 text-center text-xs text-[#c9a84c] hover:underline">
+                View all case studies →
+              </a>
+            </div>
+          </aside>
+
+          {/* Main content */}
+          <div className="flex-1">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <div className="inline-flex items-center gap-2 bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium mb-4">
@@ -220,6 +248,7 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+          </div>{/* end flex-1 */}
         </div>
       </section>
 
