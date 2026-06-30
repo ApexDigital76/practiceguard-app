@@ -8,24 +8,24 @@ export default function PracticeGuardLogo({ size = 24, className = '' }: Props) 
     <svg
       width={size}
       height={size}
-      viewBox="0 0 24 24"
+      viewBox="0 0 680 680"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       className={className}
     >
-      {/* Shield shape */}
+      {/* Wide shield — matches LinkedIn logo exactly */}
       <path
-        d="M12 2L3 6v6c0 5.25 3.75 10.15 9 11.35C17.25 22.15 21 17.25 21 12V6L12 2z"
+        d="M340 90 L130 165 L130 340 C130 455 220 540 340 578 C460 540 550 455 550 340 L550 165 Z"
         fill="currentColor"
         fillOpacity="0.15"
         stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
+        strokeWidth="18"
         strokeLinejoin="round"
       />
-      {/* Medical cross */}
-      <rect x="10.5" y="7" width="3" height="10" rx="0.75" fill="currentColor" />
-      <rect x="7" y="10.5" width="10" height="3" rx="0.75" fill="currentColor" />
+      {/* Medical cross — vertical */}
+      <rect x="312" y="215" width="56" height="210" rx="10" fill="currentColor" />
+      {/* Medical cross — horizontal */}
+      <rect x="228" y="285" width="224" height="56" rx="10" fill="currentColor" />
     </svg>
   )
 }
