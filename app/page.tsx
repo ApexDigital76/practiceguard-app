@@ -119,7 +119,7 @@ export default function HomePage() {
             </h1>
             <p className="text-white/70 text-base lg:text-lg mb-8 lg:mb-10 max-w-xl">
               The 2026 HIPAA Security Rule brings mandatory MFA, encryption, pen testing, and more.
-              OCR fines average $6.6M. We help small practices get compliant — fast and affordably.
+              OCR fines for small practices have ranged from $10K to $80K. We help small practices get compliant — fast and affordably.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#contact" className="bg-[#14b8a6] text-[#0b2340] font-bold px-8 py-4 rounded-lg hover:bg-[#14b8a6]/90 text-center">
@@ -149,12 +149,12 @@ export default function HomePage() {
       <section className="py-12 px-6 bg-gray-50 border-b">
         <div className="max-w-4xl mx-auto grid grid-cols-3 gap-4 lg:gap-8 text-center">
           {[
-            { value: '$6.6M', label: 'Average OCR Fine' },
+            { value: '$10K–$80K', label: 'Typical Small Practice OCR Fine' },
             { value: '2026', label: 'Compliance Deadline' },
             { value: '240', label: 'Days to Comply' },
           ].map(s => (
             <div key={s.label}>
-              <div className="text-3xl font-bold text-[#0b2340]">{s.value}</div>
+              <div className="text-2xl lg:text-3xl font-bold text-[#0b2340] whitespace-nowrap">{s.value}</div>
               <div className="text-sm text-gray-500 mt-1">{s.label}</div>
             </div>
           ))}
