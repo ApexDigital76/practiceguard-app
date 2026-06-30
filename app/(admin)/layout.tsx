@@ -1,8 +1,9 @@
 'use client'
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { LayoutDashboard, Users, Mail, FileText, LogOut } from 'lucide-react'
+import { supabase } from '@/lib/supabase'
 
 const nav = [
   { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
@@ -13,6 +14,12 @@ const nav = [
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname()
+  const router = useRouter()
+
+  async function signOut() {
+    await supabase.auth.signOut()
+    router.push('/login')
+  }
 
   return (
     <div className="flex min-h-screen bg-gray-50">
@@ -40,7 +47,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           ))}
         </nav>
         <div className="p-4 border-t border-white/10">
-          <button className="flex items-center gap-3 px-3 py-2 text-sm text-white/70 hover:text-white w-full">
+          <button onClick={signOut} className="flex items-center gap-3 px-3 py-2 text-sm text-white/70 hover:text-white w-full">
             <LogOut size={16} />
             Sign out
           </button>
