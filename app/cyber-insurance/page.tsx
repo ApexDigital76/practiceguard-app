@@ -99,7 +99,7 @@ export default function CyberInsurancePage() {
           <p className="text-white/70 text-lg mb-8 max-w-2xl">
             Ransomware doesn&apos;t discriminate by practice size. We help dental and medical practices implement the exact security controls that prevent attacks — and satisfy insurance auditors.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 mb-10">
+          <div className="flex flex-col sm:flex-row gap-4 mb-6">
             <a
               href="#assessment"
               className="bg-[#c9a84c] text-[#0b2340] font-bold px-8 py-4 rounded-lg hover:bg-[#c9a84c]/90 transition-colors text-center"
@@ -112,6 +112,11 @@ export default function CyberInsurancePage() {
             >
               Call (615) 785-3493
             </a>
+          </div>
+          <div className="mb-10">
+            <Link href="/resources" className="inline-flex items-center gap-2 text-white/60 hover:text-white text-sm underline underline-offset-4 transition-colors">
+              Read real attack case studies from dental practices like yours →
+            </Link>
           </div>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[

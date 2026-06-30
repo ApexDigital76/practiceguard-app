@@ -79,6 +79,7 @@ export default function HomePage() {
         <div className="hidden md:flex items-center gap-8 text-sm text-white/70">
           <a href="#changes" className="hover:text-white">What&apos;s Changing</a>
           <a href="/cyber-insurance" className="hover:text-white">Cyber Protection</a>
+          <a href="/resources" className="hover:text-white">Threat Resources</a>
           <a href="#services" className="hover:text-white">Services</a>
           <a href="#about" className="hover:text-white">About</a>
         </div>
