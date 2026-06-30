@@ -100,7 +100,7 @@ export default function ResourcesPage() {
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             The Cyber Threat to<br />
-            <span className="text-[#c9a84c]">Dental & Medical Practices</span>
+            <span className="text-[#14b8a6]">Dental & Medical Practices</span>
           </h1>
           <p className="text-white/70 text-lg max-w-2xl mx-auto">
             These aren&apos;t hypotheticals. Real practices — many just like yours — have been shut down, fined, and forced to close because of ransomware and data breaches. Here&apos;s what you need to know.
@@ -117,7 +117,7 @@ export default function ResourcesPage() {
               <div key={value} className="bg-white rounded-xl border border-gray-200 p-6">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-9 h-9 bg-[#0b2340] rounded-lg flex items-center justify-center">
-                    <Icon className="text-[#c9a84c]" size={16} />
+                    <Icon className="text-[#14b8a6]" size={16} />
                   </div>
                   <div className="text-3xl font-bold text-[#0b2340]">{value}</div>
                 </div>
@@ -161,8 +161,8 @@ export default function ResourcesPage() {
                       ))}
                     </ul>
                   </div>
-                  <div className="bg-[#0b2340]/5 border-l-4 border-[#c9a84c] rounded-r-lg px-5 py-4">
-                    <div className="text-xs font-bold text-[#c9a84c] uppercase tracking-wide mb-1">The Lesson</div>
+                  <div className="bg-[#0b2340]/5 border-l-4 border-[#14b8a6] rounded-r-lg px-5 py-4">
+                    <div className="text-xs font-bold text-[#14b8a6] uppercase tracking-wide mb-1">The Lesson</div>
                     <p className="text-sm text-gray-700">{lesson}</p>
                   </div>
                 </div>
@@ -185,7 +185,7 @@ export default function ResourcesPage() {
           <div className="grid md:grid-cols-2 gap-4 mb-10">
             {INSURANCE_FACTS.map(fact => (
               <div key={fact} className="flex items-start gap-3 bg-white/5 border border-white/10 rounded-xl px-5 py-4">
-                <CheckCircle className="text-[#c9a84c] flex-shrink-0 mt-0.5" size={16} />
+                <CheckCircle className="text-[#14b8a6] flex-shrink-0 mt-0.5" size={16} />
                 <span className="text-white/80 text-sm">{fact}</span>
               </div>
             ))}
@@ -236,7 +236,7 @@ export default function ResourcesPage() {
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between gap-6">
           <div>
             <div className="flex items-center gap-2 text-white font-bold mb-2">
-              <Shield className="text-[#c9a84c]" size={18} />
+              <Shield className="text-[#14b8a6]" size={18} />
               PracticeGuard Compliance Group
             </div>
             <p className="text-sm">HIPAA compliance &amp; cyber protection for dental &amp; medical practices.</p>

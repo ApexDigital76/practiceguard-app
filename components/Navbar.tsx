@@ -2,7 +2,8 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Shield, Menu, X } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
+import PracticeGuardLogo from './PracticeGuardLogo'
 
 const NAV_LINKS = [
   { href: '/', label: 'Home' },
@@ -28,7 +29,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity flex-shrink-0">
-          <Shield className="text-[#c9a84c]" size={22} />
+          <PracticeGuardLogo size={22} className="text-[#14b8a6]" />
           <span className="font-bold text-lg">PracticeGuard</span>
         </Link>
 
@@ -40,7 +41,7 @@ export default function Navbar() {
               href={href}
               className={`px-3 py-2 rounded-lg text-sm transition-colors ${
                 isActive(href)
-                  ? 'text-[#c9a84c] font-semibold'
+                  ? 'text-[#14b8a6] font-semibold'
                   : 'text-white/70 hover:text-white hover:bg-white/5'
               }`}
             >
@@ -53,7 +54,7 @@ export default function Navbar() {
         <div className="flex items-center gap-3">
           <Link
             href="/#contact"
-            className="bg-[#c9a84c] text-[#0b2340] font-bold px-5 py-2 rounded-lg text-sm hover:bg-[#c9a84c]/90 transition-colors hidden sm:block"
+            className="bg-[#14b8a6] text-[#0b2340] font-bold px-5 py-2 rounded-lg text-sm hover:bg-[#14b8a6]/90 transition-colors hidden sm:block"
           >
             Free Assessment
           </Link>
@@ -77,7 +78,7 @@ export default function Navbar() {
               onClick={() => setMobileOpen(false)}
               className={`block px-3 py-2.5 rounded-lg text-sm transition-colors ${
                 isActive(href)
-                  ? 'text-[#c9a84c] font-semibold bg-white/5'
+                  ? 'text-[#14b8a6] font-semibold bg-white/5'
                   : 'text-white/70 hover:text-white hover:bg-white/5'
               }`}
             >
@@ -88,7 +89,7 @@ export default function Navbar() {
             <Link
               href="/#contact"
               onClick={() => setMobileOpen(false)}
-              className="block text-center bg-[#c9a84c] text-[#0b2340] font-bold px-5 py-3 rounded-lg text-sm hover:bg-[#c9a84c]/90 transition-colors"
+              className="block text-center bg-[#14b8a6] text-[#0b2340] font-bold px-5 py-3 rounded-lg text-sm hover:bg-[#14b8a6]/90 transition-colors"
             >
               Free Assessment
             </Link>

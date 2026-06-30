@@ -116,14 +116,14 @@ export default function ManagedCompliancePage() {
       {/* Hero */}
       <section className="bg-[#0b2340] text-white py-20 px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 bg-[#c9a84c]/20 text-[#c9a84c] px-3 py-1 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#14b8a6]/20 text-[#14b8a6] px-3 py-1 rounded-full text-sm font-medium mb-6">
             <Shield size={14} /> Managed Compliance Program
           </div>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
                 Managed HIPAA Compliance<br />
-                <span className="text-[#c9a84c]">Done For You. Every Month.</span>
+                <span className="text-[#14b8a6]">Done For You. Every Month.</span>
               </h1>
               <p className="text-white/70 text-lg max-w-2xl">
                 We handle your entire HIPAA compliance program on an ongoing basis — monitoring, documentation, training, quarterly reviews, and priority support. You run your practice. We keep you compliant.
@@ -131,9 +131,9 @@ export default function ManagedCompliancePage() {
             </div>
             <div className="flex-shrink-0 bg-white/10 border border-white/20 rounded-2xl px-8 py-6 text-center">
               <div className="text-sm text-white/50 mb-1">Starting at</div>
-              <div className="text-4xl font-bold text-[#c9a84c]">$675<span className="text-2xl">/mo</span></div>
+              <div className="text-4xl font-bold text-[#14b8a6]">$675<span className="text-2xl">/mo</span></div>
               <div className="text-white/60 text-xs mt-1">+ $3,750 setup · No long-term contract</div>
-              <a href="#get-started" className="block mt-4 bg-[#c9a84c] text-[#0b2340] font-bold px-6 py-2.5 rounded-lg hover:bg-[#c9a84c]/90 transition-colors text-sm">
+              <a href="#get-started" className="block mt-4 bg-[#14b8a6] text-[#0b2340] font-bold px-6 py-2.5 rounded-lg hover:bg-[#14b8a6]/90 transition-colors text-sm">
                 Get Started →
               </a>
             </div>
@@ -148,7 +148,7 @@ export default function ManagedCompliancePage() {
           <div className="grid md:grid-cols-2 gap-3">
             {INCLUDED.map(item => (
               <div key={item} className="flex items-start gap-3 bg-white rounded-xl border border-gray-200 px-5 py-3">
-                <CheckCircle className="text-[#c9a84c] flex-shrink-0 mt-0.5" size={16} />
+                <CheckCircle className="text-[#14b8a6] flex-shrink-0 mt-0.5" size={16} />
                 <span className="text-sm text-gray-700">{item}</span>
               </div>
             ))}
@@ -166,14 +166,14 @@ export default function ManagedCompliancePage() {
               <div key={title} className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
                 <div className="flex items-center gap-3 mb-5">
                   <div className="w-10 h-10 bg-[#0b2340] rounded-lg flex items-center justify-center">
-                    <Icon className="text-[#c9a84c]" size={18} />
+                    <Icon className="text-[#14b8a6]" size={18} />
                   </div>
                   <h3 className="text-xl font-bold text-[#0b2340]">{title}</h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-3">
                   {items.map(item => (
                     <div key={item} className="flex items-start gap-2 text-sm text-gray-600">
-                      <CheckCircle className="text-[#c9a84c] flex-shrink-0 mt-0.5" size={15} />
+                      <CheckCircle className="text-[#14b8a6] flex-shrink-0 mt-0.5" size={15} />
                       {item}
                     </div>
                   ))}
@@ -229,7 +229,7 @@ export default function ManagedCompliancePage() {
       <footer className="bg-[#0b2340] text-white/60 py-10 px-6">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between gap-6">
           <div>
-            <div className="flex items-center gap-2 text-white font-bold mb-2"><Shield className="text-[#c9a84c]" size={18} /> PracticeGuard Compliance Group</div>
+            <div className="flex items-center gap-2 text-white font-bold mb-2"><Shield className="text-[#14b8a6]" size={18} /> PracticeGuard Compliance Group</div>
             <p className="text-sm">HIPAA compliance for dental &amp; medical practices.</p>
           </div>
           <div className="flex flex-col gap-2 text-sm">

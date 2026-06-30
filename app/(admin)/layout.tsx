@@ -26,7 +26,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
       {/* Sidebar */}
       <aside className="w-64 bg-[#0b2340] text-white flex flex-col">
         <div className="p-6 border-b border-white/10">
-          <div className="text-lg font-bold text-[#c9a84c]">PracticeGuard</div>
+          <div className="text-lg font-bold text-[#14b8a6]">PracticeGuard</div>
           <div className="text-xs text-white/50 mt-1">Admin Portal</div>
         </div>
         <nav className="flex-1 p-4 space-y-1">
@@ -37,7 +37,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               className={cn(
                 'flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors',
                 pathname === href
-                  ? 'bg-[#c9a84c] text-[#0b2340] font-semibold'
+                  ? 'bg-[#14b8a6] text-[#0b2340] font-semibold'
                   : 'text-white/70 hover:bg-white/10 hover:text-white'
               )}
             >

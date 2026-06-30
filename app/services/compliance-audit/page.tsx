@@ -98,23 +98,23 @@ export default function ComplianceAuditPage() {
       {/* Hero */}
       <section className="bg-[#0b2340] text-white py-20 px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="inline-flex items-center gap-2 bg-[#c9a84c]/20 text-[#c9a84c] px-3 py-1 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 bg-[#14b8a6]/20 text-[#14b8a6] px-3 py-1 rounded-full text-sm font-medium mb-6">
             <Shield size={14} /> Compliance Audit
           </div>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
                 HIPAA Compliance Audit<br />
-                <span className="text-[#c9a84c]">& Risk Analysis</span>
+                <span className="text-[#14b8a6]">& Risk Analysis</span>
               </h1>
               <p className="text-white/70 text-lg max-w-2xl">
                 A complete top-to-bottom review of your practice's HIPAA compliance posture — technical, administrative, and physical — with a full written report and remediation roadmap.
               </p>
             </div>
             <div className="flex-shrink-0 bg-white/10 border border-white/20 rounded-2xl px-8 py-6 text-center">
-              <div className="text-4xl font-bold text-[#c9a84c]">$1,997</div>
+              <div className="text-4xl font-bold text-[#14b8a6]">$1,997</div>
               <div className="text-white/60 text-sm mt-1">One-time · No recurring fees</div>
-              <a href="#get-started" className="block mt-4 bg-[#c9a84c] text-[#0b2340] font-bold px-6 py-2.5 rounded-lg hover:bg-[#c9a84c]/90 transition-colors text-sm">
+              <a href="#get-started" className="block mt-4 bg-[#14b8a6] text-[#0b2340] font-bold px-6 py-2.5 rounded-lg hover:bg-[#14b8a6]/90 transition-colors text-sm">
                 Get Started →
               </a>
             </div>
@@ -132,14 +132,14 @@ export default function ComplianceAuditPage() {
               <div key={title} className="bg-gray-50 rounded-2xl p-8 border border-gray-100">
                 <div className="flex items-center gap-3 mb-5">
                   <div className="w-10 h-10 bg-[#0b2340] rounded-lg flex items-center justify-center">
-                    <Icon className="text-[#c9a84c]" size={18} />
+                    <Icon className="text-[#14b8a6]" size={18} />
                   </div>
                   <h3 className="text-xl font-bold text-[#0b2340]">{title}</h3>
                 </div>
                 <div className="grid md:grid-cols-2 gap-3">
                   {items.map(item => (
                     <div key={item} className="flex items-start gap-2 text-sm text-gray-600">
-                      <CheckCircle className="text-[#c9a84c] flex-shrink-0 mt-0.5" size={15} />
+                      <CheckCircle className="text-[#14b8a6] flex-shrink-0 mt-0.5" size={15} />
                       {item}
                     </div>
                   ))}
@@ -158,7 +158,7 @@ export default function ComplianceAuditPage() {
           <div className="grid md:grid-cols-2 gap-5">
             {DELIVERABLES.map(({ title, desc }, i) => (
               <div key={title} className="flex gap-4 bg-white/5 border border-white/10 rounded-xl p-5">
-                <div className="w-8 h-8 bg-[#c9a84c] rounded-full flex items-center justify-center flex-shrink-0 text-[#0b2340] font-bold text-sm">
+                <div className="w-8 h-8 bg-[#14b8a6] rounded-full flex items-center justify-center flex-shrink-0 text-[#0b2340] font-bold text-sm">
                   {i + 1}
                 </div>
                 <div>
@@ -183,7 +183,7 @@ export default function ComplianceAuditPage() {
                   className="w-full text-left px-6 py-4 flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors"
                 >
                   {q}
-                  <ArrowRight size={16} className={`flex-shrink-0 transition-transform text-[#c9a84c] ${openFaq === i ? 'rotate-90' : ''}`} />
+                  <ArrowRight size={16} className={`flex-shrink-0 transition-transform text-[#14b8a6] ${openFaq === i ? 'rotate-90' : ''}`} />
                 </button>
                 {openFaq === i && (
                   <div className="px-6 pb-5 text-sm text-gray-600 border-t border-gray-100 pt-4">{a}</div>
@@ -240,7 +240,7 @@ export default function ComplianceAuditPage() {
       <footer className="bg-[#0b2340] text-white/60 py-10 px-6">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between gap-6">
           <div>
-            <div className="flex items-center gap-2 text-white font-bold mb-2"><Shield className="text-[#c9a84c]" size={18} /> PracticeGuard Compliance Group</div>
+            <div className="flex items-center gap-2 text-white font-bold mb-2"><Shield className="text-[#14b8a6]" size={18} /> PracticeGuard Compliance Group</div>
             <p className="text-sm">HIPAA compliance for dental &amp; medical practices.</p>
           </div>
           <div className="flex flex-col gap-2 text-sm">

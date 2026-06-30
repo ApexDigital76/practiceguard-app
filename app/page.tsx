@@ -80,7 +80,7 @@ export default function HomePage() {
           {/* Case Study Sidebar — upper left */}
           <aside className="lg:w-60 flex-shrink-0 w-full">
             <div className="bg-white/5 border border-white/10 rounded-2xl p-5 text-white">
-              <div className="text-[#c9a84c] font-bold text-xs uppercase tracking-wide mb-3">Real Attack Case Studies</div>
+              <div className="text-[#14b8a6] font-bold text-xs uppercase tracking-wide mb-3">Real Attack Case Studies</div>
               <p className="text-white/60 text-xs mb-4">These incidents happened to real dental and medical practices.</p>
               <div className="space-y-3">
                 {[
@@ -91,31 +91,31 @@ export default function HomePage() {
                 ].map(({ tag, color, title, desc }) => (
                   <a key={title} href="/resources" className="block bg-white/5 hover:bg-white/10 rounded-xl p-3 transition-colors group">
                     <span className={`inline-block text-xs font-semibold px-2 py-0.5 rounded-full mb-1.5 ${color}`}>{tag}</span>
-                    <div className="text-sm font-semibold text-white group-hover:text-[#c9a84c] transition-colors mb-0.5">{title}</div>
+                    <div className="text-sm font-semibold text-white group-hover:text-[#14b8a6] transition-colors mb-0.5">{title}</div>
                     <div className="text-xs text-white/50">{desc}</div>
                   </a>
                 ))}
               </div>
-              <a href="/resources" className="block mt-4 text-center text-xs text-[#c9a84c] hover:underline">View all case studies →</a>
+              <a href="/resources" className="block mt-4 text-center text-xs text-[#14b8a6] hover:underline">View all case studies →</a>
             </div>
           </aside>
 
           {/* Center: headline + buttons */}
           <div className="flex-1 text-left">
-            <div className="inline-flex items-center gap-2 bg-[#c9a84c]/20 text-[#c9a84c] px-3 py-1 rounded-full text-sm font-medium mb-6">
+            <div className="inline-flex items-center gap-2 bg-[#14b8a6]/20 text-[#14b8a6] px-3 py-1 rounded-full text-sm font-medium mb-6">
               <AlertTriangle size={14} />
               2026 HIPAA Security Rule Update — 240 Days to Comply
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               Is Your Practice Ready for<br />
-              <span className="text-[#c9a84c]">HIPAA&apos;s Biggest Update Since 2003?</span>
+              <span className="text-[#14b8a6]">HIPAA&apos;s Biggest Update Since 2003?</span>
             </h1>
             <p className="text-white/70 text-lg mb-10 max-w-xl">
               The 2026 HIPAA Security Rule brings mandatory MFA, encryption, pen testing, and more.
               OCR fines average $6.6M. We help small practices get compliant — fast and affordably.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <a href="#contact" className="bg-[#c9a84c] text-[#0b2340] font-bold px-8 py-4 rounded-lg hover:bg-[#c9a84c]/90 text-center">
+              <a href="#contact" className="bg-[#14b8a6] text-[#0b2340] font-bold px-8 py-4 rounded-lg hover:bg-[#14b8a6]/90 text-center">
                 Get My Free Readiness Check
               </a>
               <a href="#services" className="border border-white/30 text-white px-8 py-4 rounded-lg hover:bg-white/5 text-center">
@@ -126,7 +126,7 @@ export default function HomePage() {
 
           {/* Right: photo */}
           <div className="flex-shrink-0 flex flex-col items-center gap-3">
-            <div className="w-52 h-52 rounded-full overflow-hidden border-4 border-[#c9a84c]">
+            <div className="w-52 h-52 rounded-full overflow-hidden border-4 border-[#14b8a6]">
               <img src="/dallas.jpg" alt="Dallas Mitchell" className="w-full h-full object-cover" />
             </div>
             <div className="text-center text-sm text-white/70">
@@ -162,7 +162,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-6">
             {CHANGES.map(c => (
               <div key={c.title} className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md transition-shadow">
-                <CheckCircle className="text-[#c9a84c] mb-3" size={20} />
+                <CheckCircle className="text-[#14b8a6] mb-3" size={20} />
                 <div className="font-semibold text-gray-900 mb-1">{c.title}</div>
                 <div className="text-sm text-gray-500">{c.desc}</div>
               </div>
@@ -178,13 +178,13 @@ export default function HomePage() {
           <p className="text-white/50 text-center mb-12">Built for small practices — no enterprise complexity</p>
           <div className="grid md:grid-cols-2 gap-6">
             {SERVICES.map(s => (
-              <a key={s.title} href={s.href} className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-[#c9a84c]/50 transition-all group block">
+              <a key={s.title} href={s.href} className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-[#14b8a6]/50 transition-all group block">
                 <div className="flex items-start justify-between mb-3">
-                  <div className="font-semibold text-white group-hover:text-[#c9a84c] transition-colors">{s.title}</div>
-                  <div className="text-[#c9a84c] font-bold text-sm">{s.price}</div>
+                  <div className="font-semibold text-white group-hover:text-[#14b8a6] transition-colors">{s.title}</div>
+                  <div className="text-[#14b8a6] font-bold text-sm">{s.price}</div>
                 </div>
                 <div className="text-white/60 text-sm mb-3">{s.desc}</div>
-                <div className="text-[#c9a84c] text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Learn more →</div>
+                <div className="text-[#14b8a6] text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Learn more →</div>
               </a>
             ))}
           </div>
@@ -198,7 +198,7 @@ export default function HomePage() {
           {/* Case study sidebar */}
           <aside className="lg:w-64 flex-shrink-0">
             <div className="bg-[#0b2340] rounded-2xl p-5 text-white">
-              <div className="text-[#c9a84c] font-bold text-xs uppercase tracking-wide mb-3">Real Attack Case Studies</div>
+              <div className="text-[#14b8a6] font-bold text-xs uppercase tracking-wide mb-3">Real Attack Case Studies</div>
               <p className="text-white/60 text-xs mb-4">These incidents happened to real dental and medical practices.</p>
               <div className="space-y-3">
                 {[
@@ -209,12 +209,12 @@ export default function HomePage() {
                 ].map(({ tag, color, title, desc }) => (
                   <a key={title} href="/resources" className="block bg-white/5 hover:bg-white/10 rounded-xl p-4 transition-colors group">
                     <span className={`inline-block text-xs font-semibold px-2 py-0.5 rounded-full mb-2 ${color}`}>{tag}</span>
-                    <div className="text-sm font-semibold text-white group-hover:text-[#c9a84c] transition-colors mb-1">{title}</div>
+                    <div className="text-sm font-semibold text-white group-hover:text-[#14b8a6] transition-colors mb-1">{title}</div>
                     <div className="text-xs text-white/50">{desc}</div>
                   </a>
                 ))}
               </div>
-              <a href="/resources" className="block mt-4 text-center text-xs text-[#c9a84c] hover:underline">
+              <a href="/resources" className="block mt-4 text-center text-xs text-[#14b8a6] hover:underline">
                 View all case studies →
               </a>
             </div>
@@ -247,7 +247,7 @@ export default function HomePage() {
                   'Vulnerability Scanning',
                 ].map(item => (
                   <div key={item} className="flex items-center gap-2 text-sm text-gray-700">
-                    <CheckCircle className="text-[#c9a84c] flex-shrink-0" size={16} />
+                    <CheckCircle className="text-[#14b8a6] flex-shrink-0" size={16} />
                     {item}
                   </div>
                 ))}
@@ -260,7 +260,7 @@ export default function HomePage() {
               </a>
             </div>
             <div className="bg-[#0b2340] rounded-2xl p-8 text-white">
-              <div className="text-[#c9a84c] font-bold text-sm mb-4 uppercase tracking-wide">The Reality</div>
+              <div className="text-[#14b8a6] font-bold text-sm mb-4 uppercase tracking-wide">The Reality</div>
               <div className="space-y-5">
                 {[
                   { stat: '78%', label: 'increase in ransomware attacks on healthcare practices in 2024' },
@@ -269,7 +269,7 @@ export default function HomePage() {
                   { stat: '3 in 4', label: 'cyber insurers now require a formal security assessment before coverage' },
                 ].map(({ stat, label }) => (
                   <div key={stat} className="border-b border-white/10 pb-4 last:border-0 last:pb-0">
-                    <div className="text-3xl font-bold text-[#c9a84c]">{stat}</div>
+                    <div className="text-3xl font-bold text-[#14b8a6]">{stat}</div>
                     <div className="text-white/70 text-sm mt-1">{label}</div>
                   </div>
                 ))}
@@ -283,7 +283,7 @@ export default function HomePage() {
       {/* About */}
       <section id="about" className="py-20 px-6">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-12 items-center">
-          <div className="w-48 h-48 rounded-full flex-shrink-0 overflow-hidden border-4 border-[#c9a84c]">
+          <div className="w-48 h-48 rounded-full flex-shrink-0 overflow-hidden border-4 border-[#14b8a6]">
             <img src="/dallas.jpg" alt="Dallas Mitchell" className="w-full h-full object-cover" />
           </div>
           <div>
@@ -295,7 +295,7 @@ export default function HomePage() {
             <div className="grid grid-cols-2 gap-3">
               {['Local Nashville Expert', 'No Long-Term Contracts', 'Free Initial Assessment', 'Healthcare IT Specialist'].map(t => (
                 <div key={t} className="flex items-center gap-2 text-sm text-gray-700">
-                  <CheckCircle className="text-[#c9a84c] flex-shrink-0" size={16} />
+                  <CheckCircle className="text-[#14b8a6] flex-shrink-0" size={16} />
                   {t}
                 </div>
               ))}
@@ -419,7 +419,7 @@ export default function HomePage() {
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between gap-6">
           <div>
             <div className="flex items-center gap-2 text-white font-bold mb-2">
-              <Shield className="text-[#c9a84c]" size={18} />
+              <Shield className="text-[#14b8a6]" size={18} />
               PracticeGuard Compliance Group
             </div>
             <p className="text-sm">HIPAA compliance for dental &amp; medical practices.</p>

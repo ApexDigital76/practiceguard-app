@@ -83,7 +83,7 @@ export default function CyberInsurancePage() {
           {/* Case Study Sidebar — upper left */}
           <aside className="lg:w-64 flex-shrink-0">
             <div className="bg-white/5 border border-white/10 rounded-2xl p-5 text-white">
-              <div className="text-[#c9a84c] font-bold text-xs uppercase tracking-wide mb-3">Real Attack Case Studies</div>
+              <div className="text-[#14b8a6] font-bold text-xs uppercase tracking-wide mb-3">Real Attack Case Studies</div>
               <p className="text-white/60 text-xs mb-4">These incidents happened to real dental and medical practices.</p>
               <div className="space-y-3">
                 {[
@@ -94,12 +94,12 @@ export default function CyberInsurancePage() {
                 ].map(({ tag, color, title, desc }) => (
                   <Link key={title} href="/resources" className="block bg-white/5 hover:bg-white/10 rounded-xl p-3 transition-colors group">
                     <span className={`inline-block text-xs font-semibold px-2 py-0.5 rounded-full mb-1.5 ${color}`}>{tag}</span>
-                    <div className="text-sm font-semibold text-white group-hover:text-[#c9a84c] transition-colors mb-0.5">{title}</div>
+                    <div className="text-sm font-semibold text-white group-hover:text-[#14b8a6] transition-colors mb-0.5">{title}</div>
                     <div className="text-xs text-white/50">{desc}</div>
                   </Link>
                 ))}
               </div>
-              <Link href="/resources" className="block mt-4 text-center text-xs text-[#c9a84c] hover:underline">
+              <Link href="/resources" className="block mt-4 text-center text-xs text-[#14b8a6] hover:underline">
                 View all case studies →
               </Link>
             </div>
@@ -113,13 +113,13 @@ export default function CyberInsurancePage() {
             </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
               Protect Your Practice.<br />
-              <span className="text-[#c9a84c]">Qualify for Cyber Insurance.</span>
+              <span className="text-[#14b8a6]">Qualify for Cyber Insurance.</span>
             </h1>
             <p className="text-white/70 text-lg mb-8 max-w-2xl">
               Ransomware doesn&apos;t discriminate by practice size. We help dental and medical practices implement the exact security controls that prevent attacks — and satisfy insurance auditors.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
-              <a href="#assessment" className="bg-[#c9a84c] text-[#0b2340] font-bold px-8 py-4 rounded-lg hover:bg-[#c9a84c]/90 transition-colors text-center">
+              <a href="#assessment" className="bg-[#14b8a6] text-[#0b2340] font-bold px-8 py-4 rounded-lg hover:bg-[#14b8a6]/90 transition-colors text-center">
                 Get My Free Cyber Risk Assessment
               </a>
               <a href="tel:6157853493" className="border border-white/30 text-white px-8 py-4 rounded-lg hover:bg-white/5 transition-colors text-center">
@@ -134,7 +134,7 @@ export default function CyberInsurancePage() {
                 { value: '60%', label: 'Breached practices close in 6 months' },
               ].map(s => (
                 <div key={s.label} className="bg-white/5 border border-white/10 rounded-xl p-4">
-                  <div className="text-2xl font-bold text-[#c9a84c]">{s.value}</div>
+                  <div className="text-2xl font-bold text-[#14b8a6]">{s.value}</div>
                   <div className="text-white/60 text-xs mt-1">{s.label}</div>
                 </div>
               ))}
@@ -152,7 +152,7 @@ export default function CyberInsurancePage() {
               {AUDIT_REQUIREMENTS.map(({ icon: Icon, title, desc }) => (
                 <div key={title} className="flex gap-4 p-6 bg-gray-50 rounded-xl border border-gray-100">
                   <div className="w-10 h-10 bg-[#0b2340] rounded-lg flex items-center justify-center flex-shrink-0">
-                    <Icon className="text-[#c9a84c]" size={18} />
+                    <Icon className="text-[#14b8a6]" size={18} />
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 mb-1">{title}</div>
@@ -172,7 +172,7 @@ export default function CyberInsurancePage() {
           <div className="space-y-6">
             {PROCESS.map(({ step, title, desc }) => (
               <div key={step} className="flex gap-6 items-start">
-                <div className="text-3xl font-bold text-[#c9a84c] w-12 flex-shrink-0">{step}</div>
+                <div className="text-3xl font-bold text-[#14b8a6] w-12 flex-shrink-0">{step}</div>
                 <div className="border-l border-white/10 pl-6 pb-6">
                   <div className="font-semibold text-white mb-1">{title}</div>
                   <div className="text-white/60 text-sm">{desc}</div>
@@ -280,7 +280,7 @@ export default function CyberInsurancePage() {
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between gap-6">
           <div>
             <div className="flex items-center gap-2 text-white font-bold mb-2">
-              <Shield className="text-[#c9a84c]" size={18} />
+              <Shield className="text-[#14b8a6]" size={18} />
               PracticeGuard Compliance Group
             </div>
             <p className="text-sm">HIPAA compliance &amp; cyber protection for dental &amp; medical practices.</p>
