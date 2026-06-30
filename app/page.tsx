@@ -371,8 +371,8 @@ export default function HomePage() {
             <a href="mailto:dallas@practiceguardcompliance.com" className="flex items-center gap-2 hover:text-white">
               <Mail size={14} /> dallas@practiceguardcompliance.com
             </a>
-            <a href="tel:6155550100" className="flex items-center gap-2 hover:text-white">
-              <Phone size={14} /> (615) 555-0100
+            <a href="tel:6157853493" className="flex items-center gap-2 hover:text-white">
+              <Phone size={14} /> (615) 785-3493
             </a>
             <div className="flex items-center gap-2">
               <MapPin size={14} /> Nashville, TN
