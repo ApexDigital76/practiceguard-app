@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { Shield, CheckCircle, AlertTriangle, Phone, Mail, MapPin } from 'lucide-react'
+import Navbar from '@/components/Navbar'
 
 const DENTAL_SOFTWARE = [
   'Dentrix',
@@ -70,23 +71,7 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Nav */}
-      <nav className="sticky top-0 z-50 bg-[#0b2340] text-white px-6 py-4 flex items-center justify-between">
-        <a href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-          <Shield className="text-[#c9a84c]" size={22} />
-          <span className="font-bold text-lg">PracticeGuard</span>
-        </a>
-        <div className="hidden md:flex items-center gap-8 text-sm text-white/70">
-          <a href="#changes" className="hover:text-white">What&apos;s Changing</a>
-          <a href="/cyber-insurance" className="hover:text-white">Cyber Protection</a>
-          <a href="/resources" className="hover:text-white">Threat Resources</a>
-          <a href="#services" className="hover:text-white">Services</a>
-          <a href="#about" className="hover:text-white">About</a>
-        </div>
-        <a href="#contact" className="bg-[#c9a84c] text-[#0b2340] font-semibold px-4 py-2 rounded-lg text-sm hover:bg-[#c9a84c]/90">
-          Free Assessment
-        </a>
-      </nav>
+      <Navbar />
 
       {/* Hero */}
       <section className="bg-[#0b2340] text-white py-20 px-6">

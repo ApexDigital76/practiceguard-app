@@ -1,6 +1,7 @@
 'use client'
 import Link from 'next/link'
-import { Shield, AlertTriangle, CheckCircle, Phone, Mail, ExternalLink, TrendingUp, DollarSign, Clock, Users } from 'lucide-react'
+import { AlertTriangle, CheckCircle, Phone, Mail, ExternalLink, TrendingUp, DollarSign, Clock, Users } from 'lucide-react'
+import Navbar from '@/components/Navbar'
 
 const STATS = [
   { value: '58%', label: 'Surge in healthcare ransomware attacks in 2025', icon: TrendingUp },
@@ -88,19 +89,7 @@ const INSURANCE_FACTS = [
 export default function ResourcesPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Nav */}
-      <nav className="sticky top-0 z-50 bg-[#0b2340] text-white px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-          <Shield className="text-[#c9a84c]" size={22} />
-          <span className="font-bold text-lg">PracticeGuard</span>
-        </Link>
-        <div className="flex items-center gap-6 text-sm">
-          <Link href="/cyber-insurance" className="text-white/70 hover:text-white hidden md:block">Cyber Protection</Link>
-          <Link href="/#contact" className="bg-[#c9a84c] text-[#0b2340] font-bold px-5 py-2 rounded-lg hover:bg-[#c9a84c]/90">
-            Free Assessment
-          </Link>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero */}
       <section className="bg-[#0b2340] text-white py-20 px-6">
