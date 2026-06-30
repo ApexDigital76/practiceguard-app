@@ -38,10 +38,10 @@ const CHANGES = [
 ]
 
 const SERVICES = [
-  { title: 'Free Readiness Check', desc: 'Know exactly where you stand in 30 minutes.', price: 'FREE' },
-  { title: 'Compliance Audit', desc: 'Full gap analysis + remediation roadmap.', price: '$1,997' },
-  { title: 'Managed Compliance', desc: 'Ongoing monitoring + quarterly reviews.', price: 'From $675/mo' },
-  { title: 'Enterprise Program', desc: 'Full compliance + cyber insurance certification.', price: 'From $1,200/mo' },
+  { title: 'Free Readiness Check', desc: 'Know exactly where you stand in 30 minutes.', price: 'FREE', href: '/#contact' },
+  { title: 'Compliance Audit', desc: 'Full gap analysis + remediation roadmap.', price: '$1,997', href: '/services/compliance-audit' },
+  { title: 'Managed Compliance', desc: 'Ongoing monitoring + quarterly reviews.', price: 'From $675/mo', href: '/services/managed-compliance' },
+  { title: 'Enterprise Program', desc: 'Full compliance + cyber insurance certification.', price: 'From $1,200/mo', href: '/services/enterprise' },
 ]
 
 export default function HomePage() {
@@ -151,13 +151,14 @@ export default function HomePage() {
           <p className="text-white/50 text-center mb-12">Built for small practices — no enterprise complexity</p>
           <div className="grid md:grid-cols-2 gap-6">
             {SERVICES.map(s => (
-              <div key={s.title} className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 transition-colors">
+              <a key={s.title} href={s.href} className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-[#c9a84c]/50 transition-all group block">
                 <div className="flex items-start justify-between mb-3">
-                  <div className="font-semibold text-white">{s.title}</div>
+                  <div className="font-semibold text-white group-hover:text-[#c9a84c] transition-colors">{s.title}</div>
                   <div className="text-[#c9a84c] font-bold text-sm">{s.price}</div>
                 </div>
-                <div className="text-white/60 text-sm">{s.desc}</div>
-              </div>
+                <div className="text-white/60 text-sm mb-3">{s.desc}</div>
+                <div className="text-[#c9a84c] text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Learn more →</div>
+              </a>
             ))}
           </div>
         </div>
