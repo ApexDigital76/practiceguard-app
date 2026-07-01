@@ -1,4 +1,4 @@
-export type OutreachTemplate = 'lead' | 'it_vendor' | 'billing' | 'cpa' | 'insurance_broker'
+export type OutreachTemplate = 'lead' | 'it_vendor' | 'billing' | 'cpa' | 'insurance_broker' | 'consultant'
 
 export const TEMPLATE_LABELS: Record<OutreachTemplate, string> = {
   lead: 'Practice lead (free readiness check)',
@@ -6,6 +6,7 @@ export const TEMPLATE_LABELS: Record<OutreachTemplate, string> = {
   billing: 'Referral: Billing / RCM company',
   cpa: 'Referral: CPA / Accountant',
   insurance_broker: 'Referral: Insurance broker',
+  consultant: 'Referral: Supply rep / practice consultant',
 }
 
 export function draftFor(template: OutreachTemplate, name: string, city?: string) {
@@ -29,6 +30,11 @@ export function draftFor(template: OutreachTemplate, name: string, city?: string
       return {
         subject: 'Referral partnership — cyber insurance readiness',
         body: `Hi,\n\nCyber insurance carriers are tightening requirements for dental and medical practices — MFA, encrypted backups, incident response plans, documented vulnerability scans. A lot of ${name}'s clients probably aren't ready, which means denied applications or bad rates at renewal.\n\nI run PracticeGuard Compliance Group and help practices get that documentation in order before they apply or renew. I'd like to set up a referral partnership so we can help each other's clients get approved faster and stay protected.\n\nWorth a quick call?\n\nDallas Mitchell\nPracticeGuard Compliance Group\n(615) 785-3493\npracticeguardcompliance.com/partners`,
+      }
+    case 'consultant':
+      return {
+        subject: 'Referral partnership — HIPAA compliance for the practices you work with',
+        body: `Hi,\n\nThe dental and medical practices ${name} works with are facing the 2026 HIPAA Security Rule update — the biggest change to HIPAA since 2003. Most aren't aware how exposed they are until an audit notice or insurance renewal forces the issue.\n\nI run PracticeGuard Compliance Group and help practices get compliant — audits, ongoing monitoring, and cyber insurance readiness. I'd like to set up a referral partnership: a fee for every practice you introduce that becomes a client, no work required on your end beyond the intro.\n\nWorth a quick call?\n\nDallas Mitchell\nPracticeGuard Compliance Group\n(615) 785-3493\npracticeguardcompliance.com/partners`,
       }
     case 'lead':
     default:

@@ -9,7 +9,7 @@ const rowSchema = z.object({
   phone: z.string().optional(),
   website: z.string().optional(),
   city: z.string().optional(),
-  template: z.enum(['lead', 'it_vendor', 'billing', 'cpa', 'insurance_broker']).default('lead'),
+  template: z.enum(['lead', 'it_vendor', 'billing', 'cpa', 'insurance_broker', 'consultant']).default('lead'),
 })
 
 const bulkSchema = z.array(rowSchema).min(1).max(200)
