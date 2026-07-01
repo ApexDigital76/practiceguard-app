@@ -1,6 +1,7 @@
 'use client'
 import { useEffect, useState } from 'react'
 import type { Prospect } from '@/types'
+import { TEMPLATE_LABELS, type OutreachTemplate } from '@/lib/outreach-templates'
 
 const statusColors: Record<string, string> = {
   pending: 'bg-yellow-100 text-yellow-700',
@@ -18,7 +19,7 @@ export default function OutreachPage() {
   const [showAdd, setShowAdd] = useState(false)
   const [saving, setSaving] = useState<string | null>(null)
   const [editing, setEditing] = useState<Record<string, { subject: string; body: string }>>({})
-  const [form, setForm] = useState({ practice_name: '', email: '', phone: '', website: '', city: '' })
+  const [form, setForm] = useState({ practice_name: '', email: '', phone: '', website: '', city: '', template: 'lead' as OutreachTemplate })
 
   async function load() {
     setLoading(true)
@@ -40,7 +41,7 @@ export default function OutreachPage() {
         body: JSON.stringify(form),
       })
       if (!res.ok) throw new Error()
-      setForm({ practice_name: '', email: '', phone: '', website: '', city: '' })
+      setForm({ practice_name: '', email: '', phone: '', website: '', city: '', template: 'lead' })
       setShowAdd(false)
       await load()
     } catch {
@@ -107,28 +108,44 @@ export default function OutreachPage() {
       </div>
 
       {showAdd && (
-        <form onSubmit={addProspect} className="bg-white border border-gray-200 rounded-xl p-5 mb-6 grid md:grid-cols-5 gap-3 items-end">
-          {[
-            { key: 'practice_name', label: 'Practice Name *', required: true },
-            { key: 'email', label: 'Email' },
-            { key: 'phone', label: 'Phone' },
-            { key: 'website', label: 'Website' },
-            { key: 'city', label: 'City' },
-          ].map(f => (
-            <div key={f.key}>
-              <label className="block text-xs font-medium text-gray-500 mb-1">{f.label}</label>
-              <input
-                type="text"
-                required={f.required}
-                value={(form as any)[f.key]}
-                onChange={e => setForm(p => ({ ...p, [f.key]: e.target.value }))}
+        <form onSubmit={addProspect} className="bg-white border border-gray-200 rounded-xl p-5 mb-6 space-y-3">
+          <div className="grid md:grid-cols-5 gap-3">
+            {[
+              { key: 'practice_name', label: 'Name *', required: true },
+              { key: 'email', label: 'Email' },
+              { key: 'phone', label: 'Phone' },
+              { key: 'website', label: 'Website' },
+              { key: 'city', label: 'City' },
+            ].map(f => (
+              <div key={f.key}>
+                <label className="block text-xs font-medium text-gray-500 mb-1">{f.label}</label>
+                <input
+                  type="text"
+                  required={f.required}
+                  value={(form as any)[f.key]}
+                  onChange={e => setForm(p => ({ ...p, [f.key]: e.target.value }))}
+                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0b2340]"
+                />
+              </div>
+            ))}
+          </div>
+          <div className="flex items-end gap-3">
+            <div className="flex-1">
+              <label className="block text-xs font-medium text-gray-500 mb-1">Email template</label>
+              <select
+                value={form.template}
+                onChange={e => setForm(p => ({ ...p, template: e.target.value as OutreachTemplate }))}
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#0b2340]"
-              />
+              >
+                {Object.entries(TEMPLATE_LABELS).map(([value, label]) => (
+                  <option key={value} value={value}>{label}</option>
+                ))}
+              </select>
             </div>
-          ))}
-          <button type="submit" disabled={saving === 'new'} className="bg-[#14b8a6] text-[#0b2340] font-semibold px-4 py-2 rounded-lg text-sm disabled:opacity-50">
-            {saving === 'new' ? 'Adding…' : 'Add & Draft Email'}
-          </button>
+            <button type="submit" disabled={saving === 'new'} className="bg-[#14b8a6] text-[#0b2340] font-semibold px-4 py-2 rounded-lg text-sm disabled:opacity-50">
+              {saving === 'new' ? 'Adding…' : 'Add & Draft Email'}
+            </button>
+          </div>
         </form>
       )}
 
