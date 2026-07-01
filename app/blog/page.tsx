@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar'
 import { POSTS } from './posts'
 
 export const metadata: Metadata = {
-  title: 'HIPAA Compliance Blog | PracticeGuard Compliance Group',
+  title: 'HIPAA Compliance Blog',
   description: 'Practical HIPAA compliance, cyber insurance, and security guidance for dental and medical practices in Nashville and Middle Tennessee.',
 }
 
