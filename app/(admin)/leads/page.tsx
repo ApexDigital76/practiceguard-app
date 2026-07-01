@@ -1,6 +1,7 @@
 import { createAdminClient } from '@/lib/supabase'
 import { formatDate } from '@/lib/utils'
 import type { Lead } from '@/types'
+import PaymentLinkButton from '@/components/admin/PaymentLinkButton'
 
 async function getLeads(): Promise<Lead[]> {
   const supabase = createAdminClient()
@@ -35,14 +36,14 @@ export default async function LeadsPage() {
         <table className="w-full text-sm">
           <thead className="bg-gray-50 border-b border-gray-200">
             <tr>
-              {['Practice', 'Contact', 'Concern', 'Source', 'Status', 'Date'].map(h => (
+              {['Practice', 'Contact', 'Concern', 'Source', 'Status', 'Date', 'Actions'].map(h => (
                 <th key={h} className="px-4 py-3 text-left font-medium text-gray-500">{h}</th>
               ))}
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-50">
             {leads.length === 0 && (
-              <tr><td colSpan={6} className="px-4 py-8 text-center text-gray-400">No leads yet.</td></tr>
+              <tr><td colSpan={7} className="px-4 py-8 text-center text-gray-400">No leads yet.</td></tr>
             )}
             {leads.map(lead => (
               <tr key={lead.id} className="hover:bg-gray-50">
@@ -62,6 +63,9 @@ export default async function LeadsPage() {
                   </span>
                 </td>
                 <td className="px-4 py-3 text-gray-400">{formatDate(lead.created_at)}</td>
+                <td className="px-4 py-3">
+                  <PaymentLinkButton leadId={lead.id} practiceName={lead.practice_name} email={lead.email} />
+                </td>
               </tr>
             ))}
           </tbody>
