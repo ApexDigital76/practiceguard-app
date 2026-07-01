@@ -26,6 +26,16 @@ export async function sendLeadNotification(lead: {
   })
 }
 
+export async function sendOutreachEmail(to: string, subject: string, body: string) {
+  return resend.emails.send({
+    from: 'Dallas Mitchell <dallas@practiceguardcompliance.com>',
+    to,
+    replyTo: 'dallas@practiceguardcompliance.com',
+    subject,
+    text: body,
+  })
+}
+
 export async function sendWelcomeEmail(to: string, practiceName: string) {
   return resend.emails.send({
     from: 'Dallas Mitchell <dallas@practiceguardcompliance.com>',
