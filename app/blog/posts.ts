@@ -10,6 +10,40 @@ export interface BlogPost {
 
 export const POSTS: BlogPost[] = [
   {
+    slug: 'what-happens-if-your-dental-practice-gets-an-ocr-audit-notice',
+    title: 'What Happens If Your Dental Practice Gets an OCR Audit Notice?',
+    metaDescription: 'A step-by-step guide to what happens after your practice receives an HHS Office for Civil Rights audit notice, and how to respond correctly.',
+    date: '2026-06-28',
+    readTime: '5 min read',
+    excerpt: 'An OCR audit notice can arrive with little warning. Here\'s exactly what happens next, what OCR will ask for, and how to respond without making things worse.',
+    body: [
+      {
+        heading: 'How practices usually find out',
+        paragraphs: [
+          'Most OCR investigations start one of two ways: a patient complaint, or a breach report your practice filed yourself after a security incident. Either way, the first sign is typically a letter or email from HHS requesting documentation — and the response window is often just 30 days.',
+        ],
+      },
+      {
+        heading: 'What OCR typically asks for',
+        paragraphs: [
+          'The standard request list includes your written HIPAA risk analysis, your security policies and procedures, staff training records, your list of Business Associate Agreements, and documentation of any security incidents in recent years. If you\'ve never had a formal risk analysis done, this is where practices get into serious trouble — it\'s one of the most commonly cited gaps in OCR enforcement actions.',
+        ],
+      },
+      {
+        heading: 'The biggest mistake practices make',
+        paragraphs: [
+          'Scrambling to create documentation after the audit notice arrives. OCR can tell the difference between a risk analysis that was genuinely conducted months or years ago and one thrown together the week before a response is due — and "willful neglect" penalties are significantly higher than penalties for practices that made a good-faith effort but had gaps.',
+        ],
+      },
+      {
+        heading: 'How to actually be ready',
+        paragraphs: [
+          'The practices that come through an OCR audit with the smallest penalties (or none at all) are the ones who already had a current, documented risk analysis, a written incident response plan, and training records on file before anything happened. That documentation is exactly what a compliance audit produces — and it\'s far cheaper to have it ready than to build it under a 30-day deadline with regulators watching.',
+        ],
+      },
+    ],
+  },
+  {
     slug: 'hipaa-compliance-nashville-middle-tennessee-dental-practices',
     title: 'HIPAA Compliance for Dental Practices in Nashville & Middle Tennessee: A 2026 Guide',
     metaDescription: 'A practical guide to HIPAA compliance for dental and medical practices in Nashville, Gallatin, Murfreesboro, and Middle Tennessee — what changed in 2026 and what to do about it.',
