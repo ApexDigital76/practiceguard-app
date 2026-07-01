@@ -17,9 +17,27 @@ export default function ResetPasswordPage() {
       if (event === 'PASSWORD_RECOVERY') setReady(true)
     })
 
-    supabase.auth.getSession().then(({ data }) => {
+    async function checkSession() {
+      const params = new URLSearchParams(window.location.search)
+      const code = params.get('code')
+      const tokenHash = params.get('token_hash')
+      const type = params.get('type')
+
+      if (code) {
+        const { error } = await supabase.auth.exchangeCodeForSession(code)
+        if (!error) { setReady(true); return }
+      }
+
+      if (tokenHash && type === 'recovery') {
+        const { error } = await supabase.auth.verifyOtp({ token_hash: tokenHash, type: 'recovery' })
+        if (!error) { setReady(true); return }
+      }
+
+      const { data } = await supabase.auth.getSession()
       if (data.session) setReady(true)
-    })
+    }
+
+    checkSession()
 
     return () => listener.subscription.unsubscribe()
   }, [])
