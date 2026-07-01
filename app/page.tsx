@@ -2,6 +2,7 @@
 import { useState } from 'react'
 import { Shield, CheckCircle, AlertTriangle, Phone, Mail, MapPin } from 'lucide-react'
 import Navbar from '@/components/Navbar'
+import { getAttribution } from '@/lib/attribution'
 
 const DENTAL_SOFTWARE = [
   'Dentrix',
@@ -60,7 +61,7 @@ export default function HomePage() {
       const res = await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(form),
+        body: JSON.stringify({ ...form, ...getAttribution() }),
       })
       if (!res.ok) throw new Error(await res.text())
       setStatus('success')

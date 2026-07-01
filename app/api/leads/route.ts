@@ -13,6 +13,11 @@ const leadSchema = z.object({
   software: z.string().optional(),
   concern: z.string().optional(),
   best_time: z.string().optional(),
+  utm_source: z.string().optional(),
+  utm_medium: z.string().optional(),
+  utm_campaign: z.string().optional(),
+  referrer: z.string().optional(),
+  landing_page: z.string().optional(),
 }).refine(d => d.email || d.phone, { message: 'Provide email or phone' })
 
 export async function POST(req: NextRequest) {

@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { Shield, CheckCircle, AlertTriangle, Phone, Mail, Lock, Server, Users, FileText, Wifi, Eye } from 'lucide-react'
 import Navbar from '@/components/Navbar'
+import { getAttribution } from '@/lib/attribution'
 
 const AUDIT_REQUIREMENTS = [
   {
@@ -63,6 +64,7 @@ export default function CyberInsurancePage() {
           email: form.email,
           concern: form.concern || 'Cyber insurance audit prep',
           source: 'cyber-insurance-page',
+          ...getAttribution(),
         }),
       })
       if (!res.ok) throw new Error()

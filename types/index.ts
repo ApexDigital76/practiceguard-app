@@ -34,6 +34,11 @@ export interface Lead {
   source: LeadSource
   status: LeadStatus
   notes?: string
+  utm_source?: string
+  utm_medium?: string
+  utm_campaign?: string
+  referrer?: string
+  landing_page?: string
   created_at: string
 }
 
