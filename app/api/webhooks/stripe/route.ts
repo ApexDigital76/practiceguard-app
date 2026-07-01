@@ -52,6 +52,36 @@ export async function POST(req: NextRequest) {
             current_period_end: new Date((subscription as any).current_period_end * 1000).toISOString(),
           })
         }
+
+        // Invite the client to set up portal access, and link their new
+        // account to this practice so they only ever see their own data.
+        const clientEmail = session.customer_details?.email || session.customer_email
+        if (clientEmail) {
+          const origin = new URL(req.url).origin
+          const { data: existingUsers } = await supabase.auth.admin.listUsers()
+          const alreadyExists = existingUsers?.users.some(u => u.email === clientEmail)
+
+          if (!alreadyExists) {
+            const { data: invited, error: inviteError } = await supabase.auth.admin.inviteUserByEmail(
+              clientEmail,
+              { redirectTo: `${origin}/reset-password` }
+            )
+            if (!inviteError && invited.user) {
+              await supabase.from('practice_users').insert({
+                user_id: invited.user.id,
+                practice_id: practiceId,
+                role: 'owner',
+              })
+            } else if (inviteError) {
+              console.error('Failed to invite client', inviteError.message)
+            }
+          } else {
+            const user = existingUsers!.users.find(u => u.email === clientEmail)!
+            await supabase
+              .from('practice_users')
+              .upsert({ user_id: user.id, practice_id: practiceId, role: 'owner' }, { onConflict: 'user_id,practice_id' })
+          }
+        }
         break
       }
 
