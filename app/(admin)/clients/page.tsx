@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { createAdminClient } from '@/lib/supabase'
 import { formatDate, formatCurrency } from '@/lib/utils'
 import type { Practice } from '@/types'
@@ -39,7 +40,7 @@ export default async function ClientsPage() {
           </div>
         )}
         {clients.map(client => (
-          <div key={client.id} className="bg-white rounded-xl border border-gray-200 p-5 flex items-center justify-between">
+          <Link key={client.id} href={`/clients/${client.id}`} className="block bg-white rounded-xl border border-gray-200 p-5 flex items-center justify-between hover:shadow-md hover:border-[#14b8a6]/40 transition-all">
             <div>
               <div className="font-semibold text-gray-900">{client.name}</div>
               <div className="text-sm text-gray-400 mt-0.5">{client.email} · {client.phone}</div>
@@ -60,7 +61,7 @@ export default async function ClientsPage() {
               </span>
               <span className="text-xs text-gray-400">{formatDate(client.created_at)}</span>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>
