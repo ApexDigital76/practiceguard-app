@@ -1,13 +1,15 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
-const PROTECTED = ['/dashboard', '/leads', '/clients', '/outreach']
+const ADMIN_ONLY = ['/dashboard', '/leads', '/clients', '/outreach']
+const CLIENT_ONLY = ['/portal']
 
 export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
-  const isProtected = PROTECTED.some(p => pathname.startsWith(p))
-  if (!isProtected) return NextResponse.next()
+  const isAdminRoute = ADMIN_ONLY.some(p => pathname.startsWith(p))
+  const isClientRoute = CLIENT_ONLY.some(p => pathname.startsWith(p))
+  if (!isAdminRoute && !isClientRoute) return NextResponse.next()
 
   const response = NextResponse.next()
 
@@ -33,9 +35,28 @@ export async function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL('/login', request.url))
   }
 
+  const { data: adminRow } = await supabase
+    .from('admin_users')
+    .select('id')
+    .eq('user_id', user.id)
+    .maybeSingle()
+
+  const isAdmin = !!adminRow
+
+  if (isAdminRoute && !isAdmin) {
+    // Authenticated but not an admin — send them to the client portal instead
+    // of exposing lead/client/outreach data.
+    return NextResponse.redirect(new URL('/portal', request.url))
+  }
+
+  if (isClientRoute && isAdmin) {
+    // Admins manage practices from the admin dashboard, not the client portal.
+    return NextResponse.redirect(new URL('/dashboard', request.url))
+  }
+
   return response
 }
 
 export const config = {
-  matcher: ['/dashboard/:path*', '/leads/:path*', '/clients/:path*', '/outreach/:path*'],
+  matcher: ['/dashboard/:path*', '/leads/:path*', '/clients/:path*', '/outreach/:path*', '/portal/:path*'],
 }
