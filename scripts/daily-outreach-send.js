@@ -1,12 +1,14 @@
 // Daily outreach sender.
 // - Sends the drafted email to every pending prospect that has an email
-//   address, skipping any email address that has ever been sent to before
-//   (across all time, not just today) so no recipient is ever emailed twice.
+//   address, skipping any email address that has been sent to within the
+//   past 7 days, so no recipient gets more than one email per week.
 // - Prospects with no email are marked 'approved' (meaning: reported for a
 //   manual call) so they are only ever reported once, then prints a report
 //   of exactly those newly-reported prospects for Dallas to call.
 //
 // Run from the repo root: node scripts/daily-outreach-send.js
+
+const WEEKLY_COOLDOWN_MS = 7 * 24 * 60 * 60 * 1000
 
 const fs = require('fs')
 const path = require('path')
@@ -30,8 +32,12 @@ async function main() {
     process.exit(1)
   }
 
+  const now = Date.now()
   const alreadyEmailed = new Set(
-    all.filter(p => p.status === 'sent' && p.email).map(p => p.email.toLowerCase())
+    all
+      .filter(p => p.status === 'sent' && p.email && p.sent_at)
+      .filter(p => now - new Date(p.sent_at).getTime() < WEEKLY_COOLDOWN_MS)
+      .map(p => p.email.toLowerCase())
   )
 
   const pending = all.filter(p => p.status === 'pending')
