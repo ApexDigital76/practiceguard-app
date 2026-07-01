@@ -1,7 +1,33 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { Prospect } from '@/types'
 import { TEMPLATE_LABELS, type OutreachTemplate } from '@/lib/outreach-templates'
+
+const VALID_TEMPLATES = Object.keys(TEMPLATE_LABELS)
+
+function parseCSV(text: string): string[][] {
+  const rows: string[][] = []
+  let row: string[] = []
+  let field = ''
+  let inQuotes = false
+
+  for (let i = 0; i < text.length; i++) {
+    const char = text[i]
+    if (inQuotes) {
+      if (char === '"' && text[i + 1] === '"') { field += '"'; i++ }
+      else if (char === '"') { inQuotes = false }
+      else { field += char }
+    } else {
+      if (char === '"') inQuotes = true
+      else if (char === ',') { row.push(field); field = '' }
+      else if (char === '\n' || char === '\r') {
+        if (field !== '' || row.length > 0) { row.push(field); rows.push(row); row = []; field = '' }
+      } else field += char
+    }
+  }
+  if (field !== '' || row.length > 0) { row.push(field); rows.push(row) }
+  return rows.filter(r => r.some(c => c.trim() !== ''))
+}
 
 const statusColors: Record<string, string> = {
   pending: 'bg-yellow-100 text-yellow-700',
@@ -20,6 +46,8 @@ export default function OutreachPage() {
   const [saving, setSaving] = useState<string | null>(null)
   const [editing, setEditing] = useState<Record<string, { subject: string; body: string }>>({})
   const [form, setForm] = useState({ practice_name: '', email: '', phone: '', website: '', city: '', template: 'lead' as OutreachTemplate })
+  const [bulkUploading, setBulkUploading] = useState(false)
+  const fileInputRef = useRef<HTMLInputElement>(null)
 
   async function load() {
     setLoading(true)
@@ -48,6 +76,78 @@ export default function OutreachPage() {
       alert('Could not add prospect. Check the practice name and try again.')
     } finally {
       setSaving(null)
+    }
+  }
+
+  function downloadTemplate() {
+    const csv = 'name,email,phone,website,city,template\nExample Dental IT Co,contact@example.com,(615) 555-0100,https://example.com,Nashville,it_vendor\n'
+    const blob = new Blob([csv], { type: 'text/csv' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = 'outreach-prospects-template.csv'
+    a.click()
+    URL.revokeObjectURL(url)
+  }
+
+  async function handleBulkFile(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0]
+    if (!file) return
+    setBulkUploading(true)
+    try {
+      const text = await file.text()
+      const rows = parseCSV(text)
+      if (rows.length < 2) {
+        alert('CSV needs a header row plus at least one data row.')
+        return
+      }
+      const header = rows[0].map(h => h.trim().toLowerCase())
+      const nameIdx = header.findIndex(h => ['name', 'practice_name', 'company', 'company_name'].includes(h))
+      const emailIdx = header.indexOf('email')
+      const phoneIdx = header.indexOf('phone')
+      const websiteIdx = header.indexOf('website')
+      const cityIdx = header.indexOf('city')
+      const templateIdx = header.indexOf('template')
+
+      if (nameIdx === -1) {
+        alert('CSV must have a "name" column (or practice_name/company/company_name).')
+        return
+      }
+
+      const parsed = rows.slice(1).map(cols => {
+        const templateRaw = templateIdx >= 0 ? cols[templateIdx]?.trim() : ''
+        return {
+          practice_name: cols[nameIdx]?.trim() || '',
+          email: emailIdx >= 0 ? cols[emailIdx]?.trim() || '' : '',
+          phone: phoneIdx >= 0 ? cols[phoneIdx]?.trim() || '' : '',
+          website: websiteIdx >= 0 ? cols[websiteIdx]?.trim() || '' : '',
+          city: cityIdx >= 0 ? cols[cityIdx]?.trim() || '' : '',
+          template: VALID_TEMPLATES.includes(templateRaw) ? templateRaw : 'lead',
+        }
+      }).filter(r => r.practice_name)
+
+      if (parsed.length === 0) {
+        alert('No valid rows found — every row needs a name.')
+        return
+      }
+
+      const res = await fetch('/api/outreach/bulk', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(parsed),
+      })
+      const data = await res.json()
+      if (!res.ok) {
+        alert(data.error || 'Bulk upload failed.')
+        return
+      }
+      alert(`Added ${data.inserted} prospect${data.inserted === 1 ? '' : 's'}.`)
+      await load()
+    } catch (err) {
+      alert('Could not read that file. Make sure it is a valid CSV.')
+    } finally {
+      setBulkUploading(false)
+      if (fileInputRef.current) fileInputRef.current.value = ''
     }
   }
 
@@ -99,12 +199,34 @@ export default function OutreachPage() {
           <h1 className="text-2xl font-bold text-gray-900">Outreach</h1>
           <p className="text-gray-500 mt-1">{prospects.length} prospects · {prospects.filter(p => p.status === 'pending').length} awaiting review</p>
         </div>
-        <button
-          onClick={() => setShowAdd(s => !s)}
-          className="bg-[#0b2340] text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#0b2340]/90"
-        >
-          + Add Prospect
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={downloadTemplate}
+            className="text-sm text-gray-500 hover:text-gray-700 px-3 py-2"
+          >
+            Download CSV Template
+          </button>
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept=".csv"
+            onChange={handleBulkFile}
+            className="hidden"
+          />
+          <button
+            onClick={() => fileInputRef.current?.click()}
+            disabled={bulkUploading}
+            className="border border-gray-300 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium hover:bg-gray-50 disabled:opacity-50"
+          >
+            {bulkUploading ? 'Uploading…' : 'Bulk Upload CSV'}
+          </button>
+          <button
+            onClick={() => setShowAdd(s => !s)}
+            className="bg-[#0b2340] text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#0b2340]/90"
+          >
+            + Add Prospect
+          </button>
+        </div>
       </div>
 
       {showAdd && (
