@@ -9,6 +9,8 @@ const prospectSchema = z.object({
   phone: z.string().optional(),
   website: z.string().optional(),
   city: z.string().optional(),
+  dentist_name: z.string().optional(),
+  contact_name: z.string().optional(),
   template: z.enum(['lead', 'it_vendor', 'billing', 'cpa', 'insurance_broker', 'consultant']).default('lead'),
 })
 
@@ -27,7 +29,10 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
     const { template, ...data } = prospectSchema.parse(body)
-    const { subject, body: draftBody } = draftFor(template, data.practice_name, data.city)
+    const { subject, body: draftBody } = draftFor(template, data.practice_name, data.city, {
+      dentistName: data.dentist_name,
+      contactName: data.contact_name,
+    })
 
     const supabase = createAdminClient()
     const { data: inserted, error } = await supabase

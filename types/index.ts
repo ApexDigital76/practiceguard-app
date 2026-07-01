@@ -95,6 +95,8 @@ export interface Prospect {
   phone?: string
   website?: string
   city?: string
+  dentist_name?: string
+  contact_name?: string
   status: 'pending' | 'approved' | 'sent' | 'skipped'
   draft_subject?: string
   draft_body?: string

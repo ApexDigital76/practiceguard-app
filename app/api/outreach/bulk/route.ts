@@ -9,6 +9,8 @@ const rowSchema = z.object({
   phone: z.string().optional(),
   website: z.string().optional(),
   city: z.string().optional(),
+  dentist_name: z.string().optional(),
+  contact_name: z.string().optional(),
   template: z.enum(['lead', 'it_vendor', 'billing', 'cpa', 'insurance_broker', 'consultant']).default('lead'),
 })
 
@@ -20,7 +22,10 @@ export async function POST(req: NextRequest) {
     const rows = bulkSchema.parse(body)
 
     const inserts = rows.map(({ template, ...data }) => {
-      const { subject, body: draftBody } = draftFor(template as OutreachTemplate, data.practice_name, data.city)
+      const { subject, body: draftBody } = draftFor(template as OutreachTemplate, data.practice_name, data.city, {
+        dentistName: data.dentist_name,
+        contactName: data.contact_name,
+      })
       return {
         ...data,
         status: 'pending' as const,

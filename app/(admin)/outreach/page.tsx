@@ -45,7 +45,7 @@ export default function OutreachPage() {
   const [showAdd, setShowAdd] = useState(false)
   const [saving, setSaving] = useState<string | null>(null)
   const [editing, setEditing] = useState<Record<string, { subject: string; body: string }>>({})
-  const [form, setForm] = useState({ practice_name: '', email: '', phone: '', website: '', city: '', template: 'lead' as OutreachTemplate })
+  const [form, setForm] = useState({ practice_name: '', email: '', phone: '', website: '', city: '', dentist_name: '', contact_name: '', template: 'lead' as OutreachTemplate })
   const [bulkUploading, setBulkUploading] = useState(false)
   const fileInputRef = useRef<HTMLInputElement>(null)
 
@@ -69,7 +69,7 @@ export default function OutreachPage() {
         body: JSON.stringify(form),
       })
       if (!res.ok) throw new Error()
-      setForm({ practice_name: '', email: '', phone: '', website: '', city: '', template: 'lead' })
+      setForm({ practice_name: '', email: '', phone: '', website: '', city: '', dentist_name: '', contact_name: '', template: 'lead' })
       setShowAdd(false)
       await load()
     } catch {
@@ -80,7 +80,7 @@ export default function OutreachPage() {
   }
 
   function downloadTemplate() {
-    const csv = 'name,email,phone,website,city,template\nExample Dental IT Co,contact@example.com,(615) 555-0100,https://example.com,Nashville,it_vendor\n'
+    const csv = 'name,email,phone,website,city,dentist_name,contact_name,template\nExample Dental IT Co,contact@example.com,(615) 555-0100,https://example.com,Nashville,,Jane Smith,it_vendor\nSmile Dental Practice,office@smiledental.com,(615) 555-0199,https://smiledental.com,Nashville,Dr. John Doe,,lead\n'
     const blob = new Blob([csv], { type: 'text/csv' })
     const url = URL.createObjectURL(blob)
     const a = document.createElement('a')
@@ -107,6 +107,8 @@ export default function OutreachPage() {
       const phoneIdx = header.indexOf('phone')
       const websiteIdx = header.indexOf('website')
       const cityIdx = header.indexOf('city')
+      const dentistIdx = header.findIndex(h => ['dentist_name', 'dentist'].includes(h))
+      const contactIdx = header.findIndex(h => ['contact_name', 'contact', 'office_manager', 'manager_name'].includes(h))
       const templateIdx = header.indexOf('template')
 
       if (nameIdx === -1) {
@@ -122,6 +124,8 @@ export default function OutreachPage() {
           phone: phoneIdx >= 0 ? cols[phoneIdx]?.trim() || '' : '',
           website: websiteIdx >= 0 ? cols[websiteIdx]?.trim() || '' : '',
           city: cityIdx >= 0 ? cols[cityIdx]?.trim() || '' : '',
+          dentist_name: dentistIdx >= 0 ? cols[dentistIdx]?.trim() || '' : '',
+          contact_name: contactIdx >= 0 ? cols[contactIdx]?.trim() || '' : '',
           template: VALID_TEMPLATES.includes(templateRaw) ? templateRaw : 'lead',
         }
       }).filter(r => r.practice_name)
@@ -231,13 +235,15 @@ export default function OutreachPage() {
 
       {showAdd && (
         <form onSubmit={addProspect} className="bg-white border border-gray-200 rounded-xl p-5 mb-6 space-y-3">
-          <div className="grid md:grid-cols-5 gap-3">
+          <div className="grid md:grid-cols-4 gap-3">
             {[
               { key: 'practice_name', label: 'Name *', required: true },
               { key: 'email', label: 'Email' },
               { key: 'phone', label: 'Phone' },
               { key: 'website', label: 'Website' },
               { key: 'city', label: 'City' },
+              { key: 'dentist_name', label: "Dentist's Name (if known)" },
+              { key: 'contact_name', label: 'Contact / Office Manager Name (if known)' },
             ].map(f => (
               <div key={f.key}>
                 <label className="block text-xs font-medium text-gray-500 mb-1">{f.label}</label>
@@ -301,7 +307,7 @@ export default function OutreachPage() {
                   <div>
                     <div className="font-semibold text-gray-900">{p.practice_name}</div>
                     <div className="text-xs text-gray-400 mt-0.5">
-                      {[p.email, p.phone, p.city].filter(Boolean).join(' · ') || 'No contact info'}
+                      {[p.dentist_name && `Dr. ${p.dentist_name.replace(/^dr\.?\s*/i, '')}`, p.contact_name, p.email, p.phone, p.city].filter(Boolean).join(' · ') || 'No contact info'}
                     </div>
                   </div>
                   <span className={`text-xs px-2 py-0.5 rounded-full font-medium ${statusColors[p.status]}`}>
