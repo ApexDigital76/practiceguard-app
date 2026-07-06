@@ -10,6 +10,44 @@ export interface BlogPost {
 
 export const POSTS: BlogPost[] = [
   {
+    slug: 'what-happens-if-your-dental-practice-gets-hit-by-ransomware',
+    title: 'What Happens If Your Dental Practice Gets Hit by Ransomware?',
+    metaDescription: 'A realistic breakdown of what a ransomware attack looks like for a dental or medical practice, hour by hour, and the costs most owners never see coming.',
+    date: '2026-07-06',
+    readTime: '6 min read',
+    excerpt: 'Ransomware doesn\'t start with a ransom note — it starts with a normal Tuesday. Here\'s what actually happens to a dental or medical practice from the first sign of trouble to the final bill.',
+    body: [
+      {
+        heading: 'How it actually starts',
+        paragraphs: [
+          'Almost none of these attacks begin with a dramatic hack. They start with a front-desk employee clicking a link in an email that looks like a shipping notice, or an old remote-access tool left open on a server no one thinks about anymore. From that single foothold, attackers often sit quietly inside the network for days or weeks, mapping out where the patient records and backups live before they ever lock a single file.',
+          'Dental and medical practices are attractive targets precisely because they\'re smaller and less defended than hospital systems, while still holding the same valuable patient data — insurance details, medical histories, Social Security numbers — that carries a high resale value.',
+        ],
+      },
+      {
+        heading: 'The first 24 hours',
+        paragraphs: [
+          'The moment ransomware detonates, every workstation that touches the practice management system typically goes dark at once — no charting, no scheduling, no billing, no imaging. Staff usually notice within minutes because patients are sitting in the waiting room and nothing will load.',
+          'Without a written incident response plan already in place, the first day is usually spent scrambling: figuring out who to call, whether the backups are actually intact (attackers frequently target backups first), and whether the practice is legally required to notify patients — all while trying to keep the office running on paper.',
+        ],
+      },
+      {
+        heading: 'The costs nobody budgets for',
+        paragraphs: [
+          'The ransom demand itself, even if it\'s paid, is often the smallest line item. The real costs stack up around it: forensic investigators to determine what was actually accessed, weeks of lost production while systems are rebuilt, mandatory breach notification letters to every affected patient, credit monitoring offers, and in many cases an OCR investigation that follows the breach report. Practices without cyber insurance or a documented security program in place before the attack absorb all of this out of pocket — and a policy applied for after the fact won\'t cover an incident that already happened.',
+          'For a single-location practice, total costs from a mid-sized ransomware incident commonly run into six figures once lost production, recovery, and notification are added up — before accounting for the patients who don\'t come back.',
+        ],
+      },
+      {
+        heading: 'What actually prevents this',
+        paragraphs: [
+          'The controls that stop most of these attacks aren\'t exotic: multi-factor authentication on every system, backups that are tested for recovery (not just scheduled), regular vulnerability scanning to catch the exact kind of exposed remote-access tool attackers look for, and a written incident response plan so day one is a checklist instead of a scramble.',
+          'This is exactly what our Managed Compliance program maintains on an ongoing basis for practices across Nashville, Hendersonville, Gallatin, Lebanon, and Mount Juliet — so the plan, the backups, and the documentation are already in place long before an attacker ever gets a foothold.',
+        ],
+      },
+    ],
+  },
+  {
     slug: 'what-happens-if-your-dental-practice-gets-an-ocr-audit-notice',
     title: 'What Happens If Your Dental Practice Gets an OCR Audit Notice?',
     metaDescription: 'A step-by-step guide to what happens after your practice receives an HHS Office for Civil Rights audit notice, and how to respond correctly.',
