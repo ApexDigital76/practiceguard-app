@@ -10,6 +10,44 @@ export interface BlogPost {
 
 export const POSTS: BlogPost[] = [
   {
+    slug: 'lost-stolen-laptop-phone-patient-data-hipaa-breach',
+    title: 'An Employee Lost a Laptop or Phone With Patient Data on It. Now What?',
+    metaDescription: 'What actually happens after a lost or stolen device with patient data — and why encryption is the difference between a non-event and a reportable HIPAA breach.',
+    date: '2026-07-13',
+    readTime: '5 min read',
+    excerpt: 'A laptop left in a car, a phone that never made it home from lunch — lost devices are one of the most common ways practices end up reporting a breach. Here\'s what determines whether it\'s a paperwork headache or a six-figure problem.',
+    body: [
+      {
+        heading: 'Why this happens so often',
+        paragraphs: [
+          'Ransomware gets the headlines, but lost and stolen devices are one of the most common breach triggers HHS actually sees. A front-desk tablet left in a car overnight, a practice manager\'s laptop taken from an unlocked office, a phone with an email app that never got wiped before being traded in — none of it requires a hacker. It just requires a device with patient data on it leaving the building in someone\'s pocket or bag.',
+          'What makes this category different from an attack is that the outcome is almost entirely decided before the device ever goes missing — by whether it was encrypted and password-protected in the first place.',
+        ],
+      },
+      {
+        heading: 'The question that decides everything: was it encrypted?',
+        paragraphs: [
+          'Under HIPAA, a lost or stolen device that was properly encrypted is treated as a "safe harbor" — the data on it is considered unreadable to whoever finds it, so it typically doesn\'t count as a reportable breach at all. You still document the incident internally, but you\'re not sending notification letters or reporting to HHS.',
+          'A device that wasn\'t encrypted is a completely different situation. Once patient data may have been accessible to an unauthorized person, the practice generally has to assume a breach occurred and follow the full notification process — which starts a clock, not a guess.',
+        ],
+      },
+      {
+        heading: 'What the notification process actually involves',
+        paragraphs: [
+          'If the device wasn\'t encrypted, the practice has to determine what data was on it, notify every affected patient in writing (typically within 60 days), and — if more than 500 people are affected — notify HHS and local media outlets as well. Smaller breaches still get reported to HHS annually. Each of those steps takes staff time, and each notification letter is a moment where a patient learns their information wasn\'t protected the way they assumed it was.',
+          'None of this requires malice or a sophisticated attacker. It requires one unencrypted device and one moment of bad luck — a stolen car, a bag left on a train, a phone that slips out of a pocket.',
+        ],
+      },
+      {
+        heading: 'How to make this a non-event before it happens',
+        paragraphs: [
+          'Full-disk encryption on every laptop and desktop, encryption enabled on every mobile device that can access patient data, and a remote-wipe capability for phones and tablets turn a lost device from a breach into a lost-asset report. Add a password manager and screen-lock policy so a device is never sitting open and unattended, and the risk drops even further.',
+          'These are exactly the kind of controls we verify and document as part of a compliance audit, and keep current on an ongoing basis through Managed Compliance — so if a device does go missing for a practice in Nashville, Hendersonville, Gallatin, Lebanon, or Mount Juliet, the answer to "was it encrypted?" is already on file instead of being guessed at under deadline.',
+        ],
+      },
+    ],
+  },
+  {
     slug: 'what-happens-if-your-dental-practice-gets-hit-by-ransomware',
     title: 'What Happens If Your Dental Practice Gets Hit by Ransomware?',
     metaDescription: 'A realistic breakdown of what a ransomware attack looks like for a dental or medical practice, hour by hour, and the costs most owners never see coming.',
