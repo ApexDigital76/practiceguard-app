@@ -10,6 +10,44 @@ export interface BlogPost {
 
 export const POSTS: BlogPost[] = [
   {
+    slug: 'business-associate-agreements-dental-practice-guide',
+    title: 'Business Associate Agreements: What Every Dental Practice Gets Wrong',
+    metaDescription: 'What a HIPAA Business Associate Agreement actually is, which vendors need one, and the coverage gaps that get practices fined even when they meant well.',
+    date: '2026-07-20',
+    readTime: '5 min read',
+    excerpt: 'Nearly every dental practice has software vendors, a billing company, maybe an IT contractor — and HIPAA requires a signed agreement with every one of them. Here\'s what a BAA actually covers, who most practices forget, and what happens when one is missing.',
+    body: [
+      {
+        heading: 'What a BAA actually is',
+        paragraphs: [
+          'A Business Associate Agreement is a contract between your practice and any outside company or person that creates, receives, stores, or transmits patient data on your behalf. It legally obligates that vendor to protect the data the same way you\'re required to, and it spells out what happens if that vendor has a breach — including whether and how quickly they have to tell you.',
+          'HIPAA doesn\'t just recommend this. A signed BAA is required before any protected health information is shared with a vendor, full stop. Without one, sharing that data is itself a HIPAA violation — even if the vendor never mishandles anything.',
+        ],
+      },
+      {
+        heading: 'Which vendors need one — including the ones practices forget',
+        paragraphs: [
+          'The obvious ones are easy: your practice management software, your cloud backup provider, your IT support company. Practices usually have those covered.',
+          'The ones that get missed are the vendors that don\'t feel like "tech" — the answering service that takes after-hours calls and messages, the billing or collections agency, the document shredding company, the marketing platform that syncs patient appointment reminders, even a web developer who was given access to a patient portal for a support ticket. If patient data passes through them in any form, they need a BAA on file before that access happens, not after.',
+        ],
+      },
+      {
+        heading: 'What happens when one is missing',
+        paragraphs: [
+          'Missing BAAs are one of the most commonly cited findings in OCR settlements — not because the vendor caused a breach, but because the practice couldn\'t produce the agreement when asked. If that vendor later has an incident and your practice never had a signed BAA in place, you\'re treated as though you handed over patient data with no protections at all, regardless of what the vendor\'s own security actually looked like.',
+          'It\'s also one of the easiest things for an auditor to check. A risk analysis or written policy takes time to evaluate; a request for "your current list of Business Associate Agreements" either produces a folder of signed contracts or it doesn\'t.',
+        ],
+      },
+      {
+        heading: 'How to actually get this covered',
+        paragraphs: [
+          'The fix isn\'t complicated, but it does take someone actually doing it: build a full inventory of every vendor that touches patient data in any way, confirm a signed BAA exists for each one, and put a process in place so a BAA gets signed before a new vendor is ever given access — not months later when someone remembers.',
+          'Building and maintaining that vendor inventory and BAA library is part of what we document in a compliance audit and keep current through Managed Compliance, so practices in Nashville, Hendersonville, Gallatin, Lebanon, and Mount Juliet have a real answer — with the paperwork to back it up — the moment anyone asks.',
+        ],
+      },
+    ],
+  },
+  {
     slug: 'lost-stolen-laptop-phone-patient-data-hipaa-breach',
     title: 'An Employee Lost a Laptop or Phone With Patient Data on It. Now What?',
     metaDescription: 'What actually happens after a lost or stolen device with patient data — and why encryption is the difference between a non-event and a reportable HIPAA breach.',
