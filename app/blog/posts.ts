@@ -10,6 +10,44 @@ export interface BlogPost {
 
 export const POSTS: BlogPost[] = [
   {
+    slug: 'can-you-text-email-patients-hipaa-dental-practice',
+    title: 'Can You Text or Email a Patient? What HIPAA Actually Allows',
+    metaDescription: 'A clear breakdown of when texting or emailing patients is HIPAA-compliant, what platforms are safe, and the everyday habits that quietly create violations.',
+    date: '2026-07-27',
+    readTime: '5 min read',
+    excerpt: 'Appointment reminders, a quick photo of a shade guide, a follow-up question after a procedure — front desks text and email patients constantly. Here\'s where HIPAA actually draws the line, and where practices get it wrong without realizing it.',
+    body: [
+      {
+        heading: 'The short answer: it depends on what\'s in the message',
+        paragraphs: [
+          'HIPAA doesn\'t ban texting or emailing patients. What it regulates is what happens to protected health information once it leaves your practice management system — and ordinary SMS and personal email were never built with that protection in mind. A text that just says "Reminder: your appointment is tomorrow at 2pm" carries very little risk. A text that says "Your test results show..." or includes a patient\'s name alongside treatment details is a different category entirely, because that message is now PHI sitting on a carrier\'s server and on whatever phone receives it, unencrypted, indefinitely.',
+          'The line practices miss most often isn\'t texting itself — it\'s the point where a quick, well-meaning reply from a staff member turns a scheduling text into a clinical one.',
+        ],
+      },
+      {
+        heading: 'Where practices get caught out',
+        paragraphs: [
+          'The most common violation isn\'t a policy decision, it\'s a habit: a hygienist texts a patient a photo of their X-ray from a personal phone, a front-desk employee emails a patient their treatment plan from a personal Gmail account because the office system is slow, or a provider replies to a patient\'s question about symptoms over a regular SMS thread. None of it is malicious, and all of it is a reportable disclosure of PHI over an unsecured channel if it\'s ever flagged in an audit or complaint.',
+          'Group texts and email chains are another quiet risk — CC\'ing multiple people on an email that names a patient, or a text thread where a patient\'s message gets forwarded to a colleague for a quick opinion, both create PHI copies outside any system your practice actually controls.',
+        ],
+      },
+      {
+        heading: 'What\'s actually safe to send',
+        paragraphs: [
+          'Appointment reminders, general office announcements, and requests to call the office back are low-risk because they don\'t reveal why the patient is being contacted. Anything that includes diagnosis, treatment, billing detail tied to a procedure, or images of a patient\'s chart or mouth needs to go through a secure patient portal or a HIPAA-compliant messaging platform with encryption and a signed BAA — not standard text or personal email.',
+          'Patients can request to be contacted a specific way, including by regular text, but that request has to be documented as the patient\'s informed choice — it doesn\'t retroactively make an unsecured channel compliant for your side of the conversation, and it doesn\'t cover staff choosing convenience over the documented preference.',
+        ],
+      },
+      {
+        heading: 'How to set this up correctly once',
+        paragraphs: [
+          'The fix is a written communication policy — which platforms are approved for which type of message, a ban on personal phones and personal email accounts for anything clinical, and a signed BAA with whatever patient-texting or portal vendor the practice actually uses. Staff training on the difference between "reminder" and "clinical" content closes the gap that catches most practices, since the violation almost always comes from a well-intentioned shortcut, not a deliberate one.',
+          'Reviewing patient communication channels — including the vendors, the BAAs, and the staff habits around personal devices — is part of what we check in a compliance audit and keep current through Managed Compliance, so practices in Nashville, Hendersonville, Gallatin, Lebanon, and Mount Juliet have a clear, written answer for "can we text this?" instead of a front desk making the call in the moment.',
+        ],
+      },
+    ],
+  },
+  {
     slug: 'business-associate-agreements-dental-practice-guide',
     title: 'Business Associate Agreements: What Every Dental Practice Gets Wrong',
     metaDescription: 'What a HIPAA Business Associate Agreement actually is, which vendors need one, and the coverage gaps that get practices fined even when they meant well.',
