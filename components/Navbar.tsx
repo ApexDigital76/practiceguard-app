@@ -61,6 +61,14 @@ export default function Navbar() {
           >
             Free Assessment
           </Link>
+          <Link
+            href="https://calendly.com/dallasmitchell-rqe6/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-[#14b8a6] text-[#14b8a6] font-bold px-5 py-2 rounded-lg text-sm hover:bg-[#14b8a6]/10 transition-colors hidden sm:block"
+          >
+            Book a demo
+          </Link>
           <button
             onClick={() => setMobileOpen(o => !o)}
             className="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
@@ -96,6 +104,15 @@ export default function Navbar() {
               className="block text-center bg-[#14b8a6] text-[#0b2340] font-bold px-5 py-3 rounded-lg text-sm hover:bg-[#14b8a6]/90 transition-colors"
             >
               Free Assessment
+            </Link>
+            <Link
+              href="https://calendly.com/dallasmitchell-rqe6/30min"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileOpen(false)}
+              className="block text-center border border-[#14b8a6] text-[#14b8a6] font-bold px-5 py-3 rounded-lg text-sm hover:bg-[#14b8a6]/10 transition-colors mt-2"
+            >
+              Book a demo
             </Link>
           </div>
         </div>
