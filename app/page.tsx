@@ -1,6 +1,7 @@
 'use client'
 import { useState } from 'react'
 import { Shield, CheckCircle, AlertTriangle, Phone, Mail, MapPin } from 'lucide-react'
+import * as Tabs from '@radix-ui/react-tabs'
 import Navbar from '@/components/Navbar'
 import { getAttribution } from '@/lib/attribution'
 
@@ -39,11 +40,32 @@ const CHANGES = [
 ]
 
 const SERVICES = [
-  { title: 'Free Readiness Check', desc: 'Know exactly where you stand in 30 minutes.', price: 'FREE', href: '/#contact' },
-  { title: 'Compliance Audit', desc: 'Full gap analysis + remediation roadmap.', price: '$1,997', href: '/services/compliance-audit' },
-  { title: 'Managed Compliance', desc: 'Ongoing monitoring + quarterly reviews.', price: 'From $675/mo', href: '/services/managed-compliance' },
-  { title: 'Enterprise Program', desc: 'Full compliance + cyber insurance certification.', price: 'From $1,200/mo', href: '/services/enterprise' },
+  { title: 'Free Readiness Check', desc: 'Know exactly where you stand in 30 minutes.', price: 'FREE', href: '/#contact', type: 'one-time' as const },
+  { title: 'Compliance Audit', desc: 'Full gap analysis + remediation roadmap.', price: '$1,997', href: '/services/compliance-audit', type: 'one-time' as const },
+  { title: 'Managed Compliance', desc: 'Ongoing monitoring + quarterly reviews.', price: 'From $675/mo', href: '/services/managed-compliance', type: 'ongoing' as const },
+  { title: 'Enterprise Program', desc: 'Full compliance + cyber insurance certification.', price: 'From $1,200/mo', href: '/services/enterprise', type: 'ongoing' as const },
 ]
+
+function ComplianceGauge() {
+  return (
+    <div className="flex flex-col items-center">
+      <svg viewBox="0 0 200 130" className="w-full max-w-[220px]">
+        <path d="M20,100 A80,80 0 0,1 180,100" pathLength="100" fill="none" stroke="#e5e7eb" strokeWidth="16" />
+        <path d="M20,100 A80,80 0 0,1 180,100" pathLength="100" fill="none" stroke="#ef4444" strokeWidth="16" strokeDasharray="40 100" strokeLinecap="round" />
+        <path d="M20,100 A80,80 0 0,1 180,100" pathLength="100" fill="none" stroke="#f59e0b" strokeWidth="16" strokeDasharray="30 100" strokeDashoffset="-40" />
+        <path d="M20,100 A80,80 0 0,1 180,100" pathLength="100" fill="none" stroke="#14b8a6" strokeWidth="16" strokeDasharray="30 100" strokeDashoffset="-70" strokeLinecap="round" />
+        <line x1="100" y1="100" x2="89" y2="31" stroke="#0b2340" strokeWidth="4" strokeLinecap="round" />
+        <circle cx="100" cy="100" r="7" fill="#0b2340" />
+        <text x="20" y="122" fontSize="10" fill="#9ca3af">High Risk</text>
+        <text x="180" y="122" fontSize="10" fill="#9ca3af" textAnchor="end">Compliant</text>
+      </svg>
+      <div className="text-center -mt-2">
+        <div className="text-3xl font-bold text-[#0b2340]">45<span className="text-lg text-gray-400">/100</span></div>
+        <div className="text-xs text-gray-500 mt-1">Typical score on a first HIPAA Pulse Check</div>
+      </div>
+    </div>
+  )
+}
 
 export default function HomePage() {
   const [form, setForm] = useState({
@@ -146,19 +168,37 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="py-12 px-6 bg-gray-50 border-b">
-        <div className="max-w-4xl mx-auto grid grid-cols-3 gap-4 lg:gap-8 text-center">
-          {[
-            { value: '$10K–$80K', label: 'Typical Small Practice OCR Fine' },
-            { value: '2026', label: 'Compliance Deadline' },
-            { value: '240', label: 'Days to Comply' },
-          ].map(s => (
-            <div key={s.label} className="min-w-0 px-1">
-              <div className="text-xl lg:text-3xl font-bold text-[#0b2340] break-words">{s.value}</div>
-              <div className="text-xs lg:text-sm text-gray-500 mt-1">{s.label}</div>
+      {/* Compliance Score */}
+      <section className="py-16 px-6 bg-gray-50 border-b">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
+          <ComplianceGauge />
+          <div>
+            <h2 className="text-2xl lg:text-3xl font-bold text-[#0b2340] mb-3">Where Does Your Practice Stand?</h2>
+            <p className="text-gray-600 mb-6">
+              Most practices we talk to have never had a real HIPAA risk assessment. Take our free 2-minute
+              Pulse Check and see your exposure score instantly — no account needed.
+            </p>
+            <div className="grid grid-cols-3 gap-4 mb-6">
+              {[
+                { value: '$10K–$80K', label: 'Typical Small Practice OCR Fine' },
+                { value: '2026', label: 'Compliance Deadline' },
+                { value: '240', label: 'Days to Comply' },
+              ].map(s => (
+                <div key={s.label} className="min-w-0">
+                  <div className="text-lg lg:text-2xl font-bold text-[#0b2340] break-words">{s.value}</div>
+                  <div className="text-xs text-gray-500 mt-1">{s.label}</div>
+                </div>
+              ))}
             </div>
-          ))}
+            <a
+              href="https://app.practice-guard.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-[#14b8a6] text-[#0b2340] font-bold px-6 py-3 rounded-lg hover:bg-[#14b8a6]/90 transition-colors"
+            >
+              Get Your Free Score →
+            </a>
+          </div>
         </div>
       </section>
 
@@ -184,19 +224,39 @@ export default function HomePage() {
       <section id="services" className="py-20 px-6 bg-[#0b2340]">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-white text-center mb-3">Our Services</h2>
-          <p className="text-white/50 text-center mb-12">Built for small practices — no enterprise complexity</p>
-          <div className="grid md:grid-cols-2 gap-6">
-            {SERVICES.map(s => (
-              <a key={s.title} href={s.href} className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-[#14b8a6]/50 transition-all group block">
-                <div className="flex items-start justify-between mb-3">
-                  <div className="font-semibold text-white group-hover:text-[#14b8a6] transition-colors">{s.title}</div>
-                  <div className="text-[#14b8a6] font-bold text-sm">{s.price}</div>
+          <p className="text-white/50 text-center mb-10">Built for small practices — no enterprise complexity</p>
+          <Tabs.Root defaultValue="one-time">
+            <Tabs.List className="flex justify-center gap-2 mb-8">
+              <Tabs.Trigger
+                value="one-time"
+                className="px-5 py-2 rounded-lg text-sm font-medium text-white/60 data-[state=active]:bg-[#14b8a6] data-[state=active]:text-[#0b2340] hover:text-white transition-colors"
+              >
+                One-Time
+              </Tabs.Trigger>
+              <Tabs.Trigger
+                value="ongoing"
+                className="px-5 py-2 rounded-lg text-sm font-medium text-white/60 data-[state=active]:bg-[#14b8a6] data-[state=active]:text-[#0b2340] hover:text-white transition-colors"
+              >
+                Ongoing Programs
+              </Tabs.Trigger>
+            </Tabs.List>
+            {(['one-time', 'ongoing'] as const).map(type => (
+              <Tabs.Content key={type} value={type}>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {SERVICES.filter(s => s.type === type).map(s => (
+                    <a key={s.title} href={s.href} className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-[#14b8a6]/50 transition-all group block">
+                      <div className="flex items-start justify-between mb-3">
+                        <div className="font-semibold text-white group-hover:text-[#14b8a6] transition-colors">{s.title}</div>
+                        <div className="text-[#14b8a6] font-bold text-sm">{s.price}</div>
+                      </div>
+                      <div className="text-white/60 text-sm mb-3">{s.desc}</div>
+                      <div className="text-[#14b8a6] text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Learn more →</div>
+                    </a>
+                  ))}
                 </div>
-                <div className="text-white/60 text-sm mb-3">{s.desc}</div>
-                <div className="text-[#14b8a6] text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity">Learn more →</div>
-              </a>
+              </Tabs.Content>
             ))}
-          </div>
+          </Tabs.Root>
         </div>
       </section>
 
