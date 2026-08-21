@@ -14,6 +14,7 @@ const NAV_LINKS = [
   { href: '/#services', label: 'Services' },
   { href: '/#about', label: 'About' },
   { href: '/#contact', label: 'Contact' },
+  { href: 'https://app.practice-guard.com', label: 'Free Pulse Check' },
 ]
 
 export default function Navbar() {
@@ -40,6 +41,7 @@ export default function Navbar() {
             <Link
               key={href}
               href={href}
+              {...(href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
               className={`px-3 py-2 rounded-lg text-sm transition-colors ${
                 isActive(href)
                   ? 'text-[#14b8a6] font-semibold'
@@ -76,6 +78,7 @@ export default function Navbar() {
             <Link
               key={href}
               href={href}
+              {...(href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
               onClick={() => setMobileOpen(false)}
               className={`block px-3 py-2.5 rounded-lg text-sm transition-colors ${
                 isActive(href)
