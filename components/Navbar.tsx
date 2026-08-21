@@ -62,9 +62,7 @@ export default function Navbar() {
             Free Assessment
           </Link>
           <Link
-            href="https://calendly.com/dallasmitchell-rqe6/30min"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="/book-a-demo"
             className="border border-[#14b8a6] text-[#14b8a6] font-bold px-5 py-2 rounded-lg text-sm hover:bg-[#14b8a6]/10 transition-colors hidden sm:block"
           >
             Book a demo
@@ -106,9 +104,7 @@ export default function Navbar() {
               Free Assessment
             </Link>
             <Link
-              href="https://calendly.com/dallasmitchell-rqe6/30min"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/book-a-demo"
               onClick={() => setMobileOpen(false)}
               className="block text-center border border-[#14b8a6] text-[#14b8a6] font-bold px-5 py-3 rounded-lg text-sm hover:bg-[#14b8a6]/10 transition-colors mt-2"
             >
