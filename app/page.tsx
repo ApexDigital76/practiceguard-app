@@ -42,6 +42,7 @@ const CHANGES = [
 const SERVICES = [
   { title: 'Free Readiness Check', desc: 'Know exactly where you stand in 30 minutes.', price: 'FREE', href: '/#contact', type: 'one-time' as const },
   { title: 'Compliance Audit', desc: 'Full gap analysis + remediation roadmap.', price: '$1,997', href: '/services/compliance-audit', type: 'one-time' as const },
+  { title: 'Bytewing workspace', desc: 'Training, policies, BAAs & reports for your office manager.', price: 'From free', href: 'https://app.practiceguardcompliance.com', type: 'ongoing' as const },
   { title: 'Managed Compliance', desc: 'Ongoing monitoring + quarterly reviews.', price: 'From $675/mo', href: '/services/managed-compliance', type: 'ongoing' as const },
   { title: 'Enterprise Program', desc: 'Full compliance + cyber insurance certification.', price: 'From $1,200/mo', href: '/services/enterprise', type: 'ongoing' as const },
 ]
@@ -61,7 +62,7 @@ function ComplianceGauge() {
       </svg>
       <div className="text-center -mt-2">
         <div className="text-3xl font-bold text-[#0b2340]">45<span className="text-lg text-gray-400">/100</span></div>
-        <div className="text-xs text-gray-500 mt-1">Typical score on a first HIPAA Pulse Check</div>
+        <div className="text-xs text-gray-500 mt-1">Typical score on a first Bytewing Pulse Check</div>
       </div>
     </div>
   )
@@ -168,8 +169,8 @@ export default function HomePage() {
           <div>
             <h2 className="text-2xl lg:text-3xl font-bold text-[#0b2340] mb-3">Where Does Your Practice Stand?</h2>
             <p className="text-gray-600 mb-6">
-              Most practices we talk to have never had a real HIPAA risk assessment. Take our free 2-minute
-              PracticeGuard Pulse Check and see your exposure score instantly — no account needed.
+              Most practices we talk to have never had a real HIPAA risk assessment. Take the free 2-minute{' '}
+              <strong>Bytewing Pulse Check</strong> — our practice-manager workspace product — and see your exposure score instantly. No account needed.
             </p>
             <div className="grid grid-cols-3 gap-4 mb-6">
               {[
@@ -184,14 +185,14 @@ export default function HomePage() {
               ))}
             </div>
             <a
-              href="https://app.practice-guard.com"
+              href="https://app.practiceguardcompliance.com/pulse-check"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-[#14b8a6] text-[#0b2340] font-bold px-6 py-3 rounded-lg hover:bg-[#14b8a6]/90 transition-colors"
             >
-              Take the PracticeGuard Pulse Check →
+              Take the Bytewing Pulse Check →
             </a>
-            <p className="text-xs text-gray-500 mt-2">Free 2-minute risk check — no account required.</p>
+            <p className="text-xs text-gray-500 mt-2">Free 2-minute risk check — a PracticeGuard product for office managers.</p>
           </div>
         </div>
       </section>
@@ -216,7 +217,7 @@ export default function HomePage() {
       <section id="services" className="py-20 px-6 bg-[#0b2340]">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-white text-center mb-3">Our Services</h2>
-          <p className="text-white/50 text-center mb-10">Built for small practices — no enterprise complexity</p>
+          <p className="text-white/50 text-center mb-10">Consulting from PracticeGuard · workspace tools via Bytewing</p>
           <Tabs.Root defaultValue="one-time">
             <Tabs.List className="flex justify-center gap-2 mb-8">
               <Tabs.Trigger
@@ -236,7 +237,7 @@ export default function HomePage() {
               <Tabs.Content key={type} value={type}>
                 <div className="grid md:grid-cols-2 gap-6">
                   {SERVICES.filter(s => s.type === type).map(s => (
-                    <a key={s.title} href={s.href} className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-[#14b8a6]/50 transition-all group block">
+                    <a key={s.title} href={s.href} {...(s.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})} className="bg-white/5 border border-white/10 rounded-xl p-6 hover:bg-white/10 hover:border-[#14b8a6]/50 transition-all group block">
                       <div className="flex items-start justify-between mb-3">
                         <div className="font-semibold text-white group-hover:text-[#14b8a6] transition-colors">{s.title}</div>
                         <div className="text-[#14b8a6] font-bold text-sm">{s.price}</div>
@@ -476,7 +477,14 @@ export default function HomePage() {
               <Shield className="text-[#14b8a6]" size={18} />
               PracticeGuard Compliance Group
             </div>
-            <p className="text-sm">HIPAA compliance for dental & medical practices.</p>
+            <p className="text-sm">HIPAA compliance consulting for dental & medical practices.</p>
+            <p className="text-sm mt-1">
+              Product:{' '}
+              <a href="https://app.practiceguardcompliance.com" className="text-[#14b8a6] hover:underline" target="_blank" rel="noopener noreferrer">
+                Bytewing
+              </a>
+              {' '}— training, policies, BAAs & reports for practice managers.
+            </p>
           </div>
           <div className="flex flex-col gap-2 text-sm">
             <a href="mailto:dallas@practiceguardcompliance.com" className="flex items-center gap-2 hover:text-white">
@@ -491,10 +499,11 @@ export default function HomePage() {
           </div>
         </div>
         <div className="max-w-4xl mx-auto mt-8 pt-6 border-t border-white/10 text-xs text-center space-y-2">
-          <div className="flex justify-center gap-4">
+          <div className="flex justify-center gap-4 flex-wrap">
             <a href="/privacy" className="hover:text-white">Privacy Policy</a>
             <a href="/#contact" className="hover:text-white">Contact</a>
             <a href="/service-areas" className="hover:text-white">Service Areas</a>
+            <a href="https://app.practiceguardcompliance.com" className="hover:text-white" target="_blank" rel="noopener noreferrer">Bytewing app</a>
           </div>
           <div>© {new Date().getFullYear()} PracticeGuard Compliance Group. All rights reserved.</div>
         </div>
