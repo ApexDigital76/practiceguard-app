@@ -31,12 +31,12 @@ const CONCERNS = [
 ]
 
 const CHANGES = [
-  { title: 'Multi-Factor Authentication', desc: 'Required for all systems accessing PHI', slug: 'multi-factor-authentication' },
-  { title: 'Data Encryption', desc: 'At rest and in transit for all PHI', slug: 'data-encryption' },
-  { title: 'Vulnerability Scanning', desc: 'Quarterly scans now mandatory', slug: 'vulnerability-scanning' },
-  { title: 'Penetration Testing', desc: 'Annual pen tests required', slug: 'penetration-testing' },
+  { title: 'Multi-Factor Authentication', desc: 'Proposed for all systems accessing ePHI', slug: 'multi-factor-authentication' },
+  { title: 'Data Encryption', desc: 'Proposed at rest and in transit for ePHI', slug: 'data-encryption' },
+  { title: 'Vulnerability Scanning', desc: 'Proposed regular technical assessments', slug: 'vulnerability-scanning' },
+  { title: 'Penetration Testing', desc: 'Proposed periodic testing of defenses', slug: 'penetration-testing' },
   { title: 'Incident Response Plan', desc: 'Documented and tested procedures', slug: 'incident-response-plan' },
-  { title: 'Asset Inventory', desc: 'All PHI-touching devices catalogued', slug: 'asset-inventory' },
+  { title: 'Asset Inventory', desc: 'Catalog of systems that touch ePHI', slug: 'asset-inventory' },
 ]
 
 const SERVICES = [
@@ -100,7 +100,6 @@ export default function HomePage() {
       <section className="bg-[#0b2340] text-white py-10 lg:py-16 px-6">
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-start gap-10">
 
-          {/* Case Study Sidebar — hidden on mobile, visible on desktop */}
           <aside className="hidden lg:block lg:w-60 flex-shrink-0">
             <div className="bg-white/5 border border-white/10 rounded-2xl p-5 text-white">
               <div className="text-[#14b8a6] font-bold text-xs uppercase tracking-wide mb-3">Real Attack Case Studies</div>
@@ -123,11 +122,10 @@ export default function HomePage() {
             </div>
           </aside>
 
-          {/* Center: headline + buttons */}
           <div className="flex-1 text-left">
             <div className="inline-flex items-center gap-2 bg-[#14b8a6]/20 text-[#14b8a6] px-3 py-1 rounded-full text-sm font-medium mb-4 lg:mb-6">
               <AlertTriangle size={14} />
-              2026 HIPAA Security Rule Update — 240 Days to Comply
+              Proposed HIPAA Security Rule updates — get ahead of expected changes
             </div>
             <div className="flex items-start justify-between gap-3 mb-1 lg:mb-0">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
@@ -141,8 +139,7 @@ export default function HomePage() {
               HIPAA&apos;s Biggest Update Since 2003?
             </h1>
             <p className="text-white/70 text-base lg:text-lg mb-8 lg:mb-10 max-w-xl">
-              The 2026 HIPAA Security Rule brings mandatory MFA, encryption, pen testing, and more.
-              OCR fines for small practices have ranged from $10K to $80K. We help small practices get compliant — fast and affordably.
+              HHS has proposed major Security Rule updates (MFA, encryption, pen testing, and more). These are not yet final, but OCR already expects strong safeguards. Fines for small practices have ranged from $10K to $80K. We help practices get compliant — fast and affordably.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href="#contact" className="bg-[#14b8a6] text-[#0b2340] font-bold px-8 py-4 rounded-lg hover:bg-[#14b8a6]/90 text-center">
@@ -154,7 +151,6 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Right: photo — hidden on mobile */}
           <div className="hidden lg:flex flex-shrink-0 flex-col items-center gap-3">
             <div className="w-52 h-52 rounded-full overflow-hidden border-4 border-[#14b8a6]">
               <img src="/dallas.jpg" alt="Dallas Mitchell" className="w-full h-full object-cover" />
@@ -168,7 +164,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Compliance Score */}
       <section className="py-16 px-6 bg-gray-50 border-b">
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
           <ComplianceGauge />
@@ -181,8 +176,8 @@ export default function HomePage() {
             <div className="grid grid-cols-3 gap-4 mb-6">
               {[
                 { value: '$10K–$80K', label: 'Typical Small Practice OCR Fine' },
-                { value: '2026', label: 'Compliance Deadline' },
-                { value: '240', label: 'Days to Comply' },
+                { value: 'Proposed', label: 'Security Rule Updates Status' },
+                { value: 'Now', label: 'Best Time to Prepare' },
               ].map(s => (
                 <div key={s.label} className="min-w-0">
                   <div className="text-lg lg:text-2xl font-bold text-[#0b2340] break-words">{s.value}</div>
@@ -202,11 +197,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* What's Changing */}
       <section id="changes" className="py-20 px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#0b2340] text-center mb-3">What&apos;s Changing in 2026</h2>
-          <p className="text-gray-500 text-center mb-12">New mandatory requirements your practice must meet</p>
+          <h2 className="text-3xl font-bold text-[#0b2340] text-center mb-3">What&apos;s Proposed to Change</h2>
+          <p className="text-gray-500 text-center mb-12">Expected Security Rule updates — and controls practices should already prioritize</p>
           <div className="grid md:grid-cols-3 gap-6">
             {CHANGES.map(c => (
               <a key={c.title} href={`/changes/${c.slug}`} className="block bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-[#14b8a6]/40 transition-all">
@@ -220,7 +214,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Services */}
       <section id="services" className="py-20 px-6 bg-[#0b2340]">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-white text-center mb-3">Our Services</h2>
@@ -260,11 +253,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Cyber Insurance Readiness */}
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10 items-start">
-
-          {/* Case study sidebar */}
           <aside className="lg:w-64 flex-shrink-0">
             <div className="bg-[#0b2340] rounded-2xl p-5 text-white">
               <div className="text-[#14b8a6] font-bold text-xs uppercase tracking-wide mb-3">Real Attack Case Studies</div>
@@ -289,7 +279,6 @@ export default function HomePage() {
             </div>
           </aside>
 
-          {/* Main content */}
           <div className="flex-1">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -345,11 +334,10 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-          </div>{/* end flex-1 */}
+          </div>
         </div>
       </section>
 
-      {/* About */}
       <section id="about" className="py-20 px-6">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row gap-12 items-center">
           <div className="w-48 h-48 rounded-full flex-shrink-0 overflow-hidden border-4 border-[#14b8a6]">
@@ -373,7 +361,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Contact Form */}
       <section id="contact" className="py-20 px-6 bg-gray-50">
         <div className="max-w-2xl mx-auto">
           <h2 className="text-3xl font-bold text-[#0b2340] text-center mb-3">Get Your Free Readiness Check</h2>
@@ -483,7 +470,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="bg-[#0b2340] text-white/60 py-10 px-6">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row justify-between gap-6">
           <div>
