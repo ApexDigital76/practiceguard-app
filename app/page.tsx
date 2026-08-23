@@ -96,10 +96,8 @@ export default function HomePage() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      {/* Hero */}
       <section className="bg-[#0b2340] text-white py-10 lg:py-16 px-6">
         <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-start gap-10">
-
           <aside className="hidden lg:block lg:w-60 flex-shrink-0">
             <div className="bg-white/5 border border-white/10 rounded-2xl p-5 text-white">
               <div className="text-[#14b8a6] font-bold text-xs uppercase tracking-wide mb-3">Real Attack Case Studies</div>
@@ -136,7 +134,7 @@ export default function HomePage() {
               </div>
             </div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6 leading-tight text-[#14b8a6]">
-              HIPAA&apos;s Biggest Update Since 2003?
+              HIPAA's Biggest Update Since 2003?
             </h1>
             <p className="text-white/70 text-base lg:text-lg mb-8 lg:mb-10 max-w-xl">
               HHS has proposed major Security Rule updates (MFA, encryption, pen testing, and more). These are not yet final, but OCR already expects strong safeguards. Fines for small practices have ranged from $10K to $80K. We help practices get compliant — fast and affordably.
@@ -171,7 +169,7 @@ export default function HomePage() {
             <h2 className="text-2xl lg:text-3xl font-bold text-[#0b2340] mb-3">Where Does Your Practice Stand?</h2>
             <p className="text-gray-600 mb-6">
               Most practices we talk to have never had a real HIPAA risk assessment. Take our free 2-minute
-              Pulse Check and see your exposure score instantly — no account needed.
+              PracticeGuard Pulse Check and see your exposure score instantly — no account needed.
             </p>
             <div className="grid grid-cols-3 gap-4 mb-6">
               {[
@@ -191,15 +189,16 @@ export default function HomePage() {
               rel="noopener noreferrer"
               className="inline-block bg-[#14b8a6] text-[#0b2340] font-bold px-6 py-3 rounded-lg hover:bg-[#14b8a6]/90 transition-colors"
             >
-              Get Your Free Score →
+              Take the PracticeGuard Pulse Check →
             </a>
+            <p className="text-xs text-gray-500 mt-2">Free 2-minute risk check — no account required.</p>
           </div>
         </div>
       </section>
 
       <section id="changes" className="py-20 px-6">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl font-bold text-[#0b2340] text-center mb-3">What&apos;s Proposed to Change</h2>
+          <h2 className="text-3xl font-bold text-[#0b2340] text-center mb-3">What's Proposed to Change</h2>
           <p className="text-gray-500 text-center mb-12">Expected Security Rule updates — and controls practices should already prioritize</p>
           <div className="grid md:grid-cols-3 gap-6">
             {CHANGES.map(c => (
@@ -290,7 +289,7 @@ export default function HomePage() {
                 Is Your Practice Ready for a Cyber Attack — or a Cyber Insurance Audit?
               </h2>
               <p className="text-gray-600 mb-4">
-                Ransomware attacks on dental practices jumped 78% in 2024. Most cyber insurance carriers now require practices to meet strict security standards before they&apos;ll issue a policy — and many are being denied at renewal.
+                Ransomware attacks on dental practices jumped 78% in 2024. Most cyber insurance carriers now require practices to meet strict security standards before they'll issue a policy — and many are being denied at renewal.
               </p>
               <p className="text-gray-600 mb-6">
                 PracticeGuard helps you get audit-ready fast, so you can qualify for coverage and actually survive an attack if one happens.
@@ -346,7 +345,7 @@ export default function HomePage() {
           <div>
             <h2 className="text-3xl font-bold text-[#0b2340] mb-4">Dallas Mitchell</h2>
             <p className="text-gray-600 mb-4">
-              With 25+ years in healthcare IT, I&apos;ve seen firsthand how devastating a HIPAA breach can be for a small practice.
+              With 25+ years in healthcare IT, I've seen firsthand how devastating a HIPAA breach can be for a small practice.
               PracticeGuard exists to make enterprise-grade compliance accessible to every dental and medical practice — regardless of size.
             </p>
             <div className="grid grid-cols-2 gap-3">
@@ -477,7 +476,7 @@ export default function HomePage() {
               <Shield className="text-[#14b8a6]" size={18} />
               PracticeGuard Compliance Group
             </div>
-            <p className="text-sm">HIPAA compliance for dental &amp; medical practices.</p>
+            <p className="text-sm">HIPAA compliance for dental & medical practices.</p>
           </div>
           <div className="flex flex-col gap-2 text-sm">
             <a href="mailto:dallas@practiceguardcompliance.com" className="flex items-center gap-2 hover:text-white">
@@ -487,12 +486,17 @@ export default function HomePage() {
               <Phone size={14} /> (615) 785-3493
             </a>
             <a href="/service-areas" className="flex items-center gap-2 hover:text-white">
-              <MapPin size={14} /> Serving Nashville, Hendersonville, Gallatin, Lebanon &amp; Mount Juliet, TN
+              <MapPin size={14} /> Serving Nashville, Hendersonville, Gallatin, Lebanon & Mount Juliet, TN
             </a>
           </div>
         </div>
-        <div className="max-w-4xl mx-auto mt-8 pt-6 border-t border-white/10 text-xs text-center">
-          © {new Date().getFullYear()} PracticeGuard Compliance Group. All rights reserved.
+        <div className="max-w-4xl mx-auto mt-8 pt-6 border-t border-white/10 text-xs text-center space-y-2">
+          <div className="flex justify-center gap-4">
+            <a href="/privacy" className="hover:text-white">Privacy Policy</a>
+            <a href="/#contact" className="hover:text-white">Contact</a>
+            <a href="/service-areas" className="hover:text-white">Service Areas</a>
+          </div>
+          <div>© {new Date().getFullYear()} PracticeGuard Compliance Group. All rights reserved.</div>
         </div>
       </footer>
     </div>
