@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     default: 'PracticeGuard Compliance Group | HIPAA Compliance for Nashville & Middle TN Practices',
     template: '%s | PracticeGuard Compliance Group',
   },
-  description: 'HIPAA compliance and cyber insurance readiness for dental and medical practices in Nashville, Hendersonville, Gallatin, Lebanon, and Mount Juliet, TN — 2026 Security Rule ready.',
+  description: 'HIPAA compliance and cyber insurance readiness for dental and medical practices in Nashville, Hendersonville, Gallatin, Lebanon, and Mount Juliet, TN — Security Rule readiness and cyber insurance prep.',
   keywords: ['HIPAA compliance Nashville', 'HIPAA compliance Hendersonville TN', 'HIPAA compliance Gallatin TN', 'dental HIPAA compliance Lebanon TN', 'cyber insurance Mount Juliet TN', 'HIPAA risk assessment Middle Tennessee'],
   openGraph: {
     title: 'PracticeGuard Compliance Group',

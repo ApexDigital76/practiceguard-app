@@ -14,7 +14,7 @@ const NAV_LINKS = [
   { href: '/#services', label: 'Services' },
   { href: '/#about', label: 'About' },
   { href: '/#contact', label: 'Contact' },
-  { href: 'https://app.practice-guard.com', label: 'Free Pulse Check' },
+  { href: 'https://app.practice-guard.com', label: 'Pulse Check' },
 ]
 
 export default function Navbar() {
@@ -29,13 +29,11 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-[#0b2340] text-white shadow-lg">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        {/* Logo */}
         <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity flex-shrink-0">
           <PracticeGuardLogo size={22} className="text-[#14b8a6]" />
           <span className="font-bold text-lg">PracticeGuard</span>
         </Link>
 
-        {/* Desktop nav */}
         <div className="hidden lg:flex items-center gap-1">
           {NAV_LINKS.map(({ href, label }) => (
             <Link
@@ -53,7 +51,6 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* CTA + mobile toggle */}
         <div className="flex items-center gap-3">
           <Link
             href="/#contact"
@@ -77,7 +74,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {mobileOpen && (
         <div className="lg:hidden border-t border-white/10 px-6 py-4 space-y-1">
           {NAV_LINKS.map(({ href, label }) => (

@@ -20,6 +20,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/service-areas',
     '/partners',
     '/blog',
+    '/privacy',
+    '/book-a-demo',
     '/services/compliance-audit',
     '/services/managed-compliance',
     '/services/enterprise',
