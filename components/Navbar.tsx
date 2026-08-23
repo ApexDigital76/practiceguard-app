@@ -29,8 +29,8 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-[#0b2340] text-white shadow-lg">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity flex-shrink-0">
-          <PracticeGuardLogo size={26} className="text-[#14b8a6]" />
+        <Link href="/" className="flex items-center gap-2.5 hover:opacity-80 transition-opacity flex-shrink-0">
+          <PracticeGuardLogo size={28} className="text-[#14b8a6]" />
           <span className="font-bold text-lg">PracticeGuard</span>
         </Link>
 
