@@ -14,7 +14,7 @@ const TOPICS: Record<string, {
     title: 'Multi-Factor Authentication',
     tagline: 'A second login step that stops stolen passwords from being enough.',
     whatItIs: 'Multi-Factor Authentication (MFA) means that logging in takes more than just a password — you also need a second piece of proof, like a code sent to your phone or an authenticator app. If someone steals or guesses a password, they still can\'t get in without that second step.',
-    whyItMatters: 'Most healthcare breaches start with a stolen or weak password. MFA is one of the single most effective things a practice can do to stop unauthorized access, and it\'s now a baseline expectation for HIPAA compliance and cyber insurance.',
+    whyItMatters: 'Most healthcare breaches start with a stolen or weak password. MFA is one of the single most effective things a practice can do to stop unauthorized access, and it\'s a baseline expectation for strong HIPAA security programs and cyber insurance.',
     whatItLooksLike: [
       'Turned on for email accounts (Office 365, Gmail, etc.)',
       'Turned on for your practice management software',
@@ -38,7 +38,7 @@ const TOPICS: Record<string, {
     title: 'Vulnerability Scanning',
     tagline: 'An automated check for weak spots in your network before hackers find them.',
     whatItIs: 'A vulnerability scan is an automated tool that checks your network, computers, and connected devices for known security weaknesses — like outdated software, missing patches, or misconfigured settings — and produces a report of what needs fixing.',
-    whyItMatters: 'New security weaknesses are discovered constantly. A network that was clean six months ago can have new exploitable gaps today. Regular scanning catches these before an attacker does, and quarterly scans are now a baseline requirement under the 2026 HIPAA Security Rule.',
+    whyItMatters: 'New security weaknesses are discovered constantly. A network that was clean six months ago can have new exploitable gaps today. Regular scanning catches these before an attacker does, and regular scanning is a proposed requirement under the HIPAA Security Rule updates — and already expected by many insurers and auditors.',
     whatItLooksLike: [
       'Scans run quarterly across your entire network',
       'A report ranking issues by severity (critical, high, medium, low)',
@@ -50,7 +50,7 @@ const TOPICS: Record<string, {
     title: 'Penetration Testing',
     tagline: 'A simulated, hands-on hack to find what an automated scan would miss.',
     whatItIs: 'A penetration test (or "pen test") is a controlled, ethical hacking exercise where a security professional actively tries to break into your systems the way a real attacker would. Unlike an automated vulnerability scan, a pen test is hands-on and digs deeper to confirm whether a weakness can actually be exploited.',
-    whyItMatters: 'Insurance carriers and OCR auditors increasingly want proof that your defenses have been tested under real attack conditions, not just scanned. An annual pen test is now expected for practices seeking cyber insurance or demonstrating full compliance.',
+    whyItMatters: 'Insurance carriers and OCR auditors increasingly want proof that your defenses have been tested under real attack conditions, not just scanned. An annual pen test is increasingly expected for practices seeking cyber insurance or demonstrating a mature security program.',
     whatItLooksLike: [
       'Performed once a year by a qualified third party',
       'A written report of what was tested and what was found',
@@ -100,7 +100,7 @@ export default async function ChangeDetailPage({ params }: { params: Promise<{ s
       <section className="bg-[#0b2340] text-white py-16 px-6">
         <div className="max-w-3xl mx-auto">
           <Link href="/#changes" className="inline-flex items-center gap-2 text-white/60 hover:text-white text-sm mb-6">
-            <ArrowLeft size={14} /> Back to What&apos;s Changing
+            <ArrowLeft size={14} /> Back to What&apos;s Proposed to Change
           </Link>
           <h1 className="text-3xl md:text-4xl font-bold mb-3 leading-tight">{topic.title}</h1>
           <p className="text-white/70 text-lg">{topic.tagline}</p>
@@ -142,7 +142,13 @@ export default async function ChangeDetailPage({ params }: { params: Promise<{ s
       </section>
 
       <footer className="bg-[#0b2340] text-white/60 py-10 px-6">
-        <div className="max-w-4xl mx-auto text-xs text-center">© {new Date().getFullYear()} PracticeGuard Compliance Group. All rights reserved.</div>
+        <div className="max-w-4xl mx-auto text-xs text-center space-y-2">
+          <div className="flex justify-center gap-4">
+            <Link href="/privacy" className="hover:text-white">Privacy Policy</Link>
+            <Link href="/#contact" className="hover:text-white">Contact</Link>
+          </div>
+          <div>© {new Date().getFullYear()} PracticeGuard Compliance Group. All rights reserved.</div>
+        </div>
       </footer>
     </div>
   )
