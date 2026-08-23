@@ -14,7 +14,7 @@ const NAV_LINKS = [
   { href: '/#services', label: 'Services' },
   { href: '/#about', label: 'About' },
   { href: '/#contact', label: 'Contact' },
-  { href: 'https://app.practice-guard.com', label: 'Pulse Check' },
+  { href: 'https://app.practiceguardcompliance.com/pulse-check', label: 'Bytewing Pulse Check' },
 ]
 
 export default function Navbar() {
@@ -59,10 +59,12 @@ export default function Navbar() {
             Free Assessment
           </Link>
           <Link
-            href="/book-a-demo"
+            href="https://app.practiceguardcompliance.com"
+            target="_blank"
+            rel="noopener noreferrer"
             className="border border-[#14b8a6] text-[#14b8a6] font-bold px-5 py-2 rounded-lg text-sm hover:bg-[#14b8a6]/10 transition-colors hidden sm:block"
           >
-            Book a demo
+            Open Bytewing
           </Link>
           <button
             onClick={() => setMobileOpen(o => !o)}
@@ -100,11 +102,13 @@ export default function Navbar() {
               Free Assessment
             </Link>
             <Link
-              href="/book-a-demo"
+              href="https://app.practiceguardcompliance.com"
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setMobileOpen(false)}
               className="block text-center border border-[#14b8a6] text-[#14b8a6] font-bold px-5 py-3 rounded-lg text-sm hover:bg-[#14b8a6]/10 transition-colors mt-2"
             >
-              Book a demo
+              Open Bytewing
             </Link>
           </div>
         </div>
