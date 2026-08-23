@@ -14,7 +14,7 @@ const NAV_LINKS = [
   { href: '/#services', label: 'Services' },
   { href: '/#about', label: 'About' },
   { href: '/#contact', label: 'Contact' },
-  { href: 'https://app.practiceguardcompliance.com/pulse-check', label: 'Bytewing Pulse Check' },
+  { href: 'https://app.practiceguardcompliance.com/pulse-check', label: 'Practice Pulse Check' },
 ]
 
 export default function Navbar() {
@@ -30,7 +30,7 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 bg-[#0b2340] text-white shadow-lg">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity flex-shrink-0">
-          <PracticeGuardLogo size={22} className="text-[#14b8a6]" />
+          <PracticeGuardLogo size={26} className="text-[#14b8a6]" />
           <span className="font-bold text-lg">PracticeGuard</span>
         </Link>
 
@@ -64,7 +64,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="border border-[#14b8a6] text-[#14b8a6] font-bold px-5 py-2 rounded-lg text-sm hover:bg-[#14b8a6]/10 transition-colors hidden sm:block"
           >
-            Open Bytewing
+            Open Practice Pulse
           </Link>
           <button
             onClick={() => setMobileOpen(o => !o)}
@@ -108,7 +108,7 @@ export default function Navbar() {
               onClick={() => setMobileOpen(false)}
               className="block text-center border border-[#14b8a6] text-[#14b8a6] font-bold px-5 py-3 rounded-lg text-sm hover:bg-[#14b8a6]/10 transition-colors mt-2"
             >
-              Open Bytewing
+              Open Practice Pulse
             </Link>
           </div>
         </div>
