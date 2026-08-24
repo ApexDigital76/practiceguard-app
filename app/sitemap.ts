@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { POSTS } from './blog/posts'
 
-const BASE_URL = 'https://practiceguardcompliance.com'
+const BASE_URL = 'https://www.practiceguardcompliance.com'
 
 const CHANGE_SLUGS = [
   'multi-factor-authentication',
