@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { CheckCircle, ArrowLeft } from 'lucide-react'
@@ -86,6 +87,22 @@ const TOPICS: Record<string, {
 
 export function generateStaticParams() {
   return Object.keys(TOPICS).map(slug => ({ slug }))
+}
+
+// All six of these pages were inheriting the site-wide default title, so search
+// engines saw six identical entries. Each one now describes its own topic.
+export async function generateMetadata(
+  { params }: { params: Promise<{ slug: string }> }
+): Promise<Metadata> {
+  const { slug } = await params
+  const topic = TOPICS[slug]
+  if (!topic) return {}
+
+  return {
+    title: { absolute: `${topic.title} for Dental & Medical Practices | HIPAA` },
+    description: `${topic.tagline} What ${topic.title.toLowerCase()} means under the HIPAA Security Rule, why it matters for your practice, and what it looks like in place.`,
+    alternates: { canonical: `/changes/${slug}` },
+  }
 }
 
 export default async function ChangeDetailPage({ params }: { params: Promise<{ slug: string }> }) {
