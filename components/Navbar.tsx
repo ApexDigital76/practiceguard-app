@@ -13,7 +13,7 @@ const NAV_LINKS = [
   { href: '/#services', label: 'Services' },
   { href: '/#about', label: 'About' },
   { href: '/#contact', label: 'Contact' },
-  { href: 'https://app.practiceguardcompliance.com/pulse-check', label: 'Practice Pulse Check' },
+  { href: 'https://app.practiceguardcompliance.com/pulse-check', label: 'PracticePulse Check' },
 ]
 
 export default function Navbar() {
@@ -69,7 +69,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="border border-[#22D3EE] text-[#22D3EE] font-bold px-5 py-2 rounded-lg text-sm hover:bg-[#22D3EE]/10 transition-colors hidden sm:block"
           >
-            Open Practice Pulse
+            Open PracticePulse
           </Link>
           <button
             onClick={() => setMobileOpen((o) => !o)}
@@ -113,7 +113,7 @@ export default function Navbar() {
               onClick={() => setMobileOpen(false)}
               className="block text-center border border-[#22D3EE] text-[#22D3EE] font-bold px-5 py-3 rounded-lg text-sm hover:bg-[#22D3EE]/10 transition-colors mt-2"
             >
-              Open Practice Pulse
+              Open PracticePulse
             </Link>
           </div>
         </div>
