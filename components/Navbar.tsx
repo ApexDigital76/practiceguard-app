@@ -1,9 +1,9 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
-import PracticeGuardLogo from './PracticeGuardLogo'
 
 const NAV_LINKS = [
   { href: '/', label: 'Home' },
@@ -28,13 +28,16 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 bg-[#0b2340] text-white shadow-lg">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2.5 hover:opacity-90 transition-opacity flex-shrink-0">
-          <PracticeGuardLogo size={30} className="text-[#22D3EE]" />
-          <span className="font-bold text-lg tracking-tight">
-            <span className="text-white">Practice</span>
-            <span className="text-[#22D3EE]">Guard</span>
-          </span>
+      <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
+        <Link href="/" className="flex items-center hover:opacity-90 transition-opacity flex-shrink-0">
+          <Image
+            src="/media/practiceguard-logo.png"
+            alt="PracticeGuard"
+            width={180}
+            height={48}
+            className="h-10 w-auto"
+            priority
+          />
         </Link>
 
         <div className="hidden lg:flex items-center gap-1">
@@ -70,7 +73,7 @@ export default function Navbar() {
             Open Practice Pulse
           </Link>
           <button
-            onClick={() => setMobileOpen(o => !o)}
+            onClick={() => setMobileOpen((o) => !o)}
             className="lg:hidden p-2 rounded-lg hover:bg-white/10 transition-colors"
             aria-label="Toggle menu"
           >
