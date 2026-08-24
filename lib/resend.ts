@@ -65,7 +65,7 @@ export async function sendLeadConfirmation(lead: LeadPayload) {
   const firstName = (lead.manager_name || lead.dentist_name || 'there').split(' ')[0]
   const scoreLine =
     typeof lead.score === 'number'
-      ? `Your Practice Pulse score: ${lead.score}/100\n`
+      ? `Your PracticePulse score: ${lead.score}/100\n`
       : ''
   const gapsBlock =
     lead.gaps && lead.gaps.length > 0
@@ -74,7 +74,7 @@ export async function sendLeadConfirmation(lead: LeadPayload) {
 
   const text = `Hi ${firstName},
 
-Thanks for completing the Practice Pulse Check for ${lead.practice_name}.
+Thanks for completing the PracticePulse Check for ${lead.practice_name}.
 
 ${scoreLine}${gapsBlock}
 I've received your results and will review them shortly. You can expect a short follow-up from me within 2 business days with clarity on what stands out and where to focus first.
@@ -93,7 +93,7 @@ https://www.practiceguardcompliance.com
     from: 'Dallas Mitchell <dallas@practiceguardcompliance.com>',
     to: lead.email,
     replyTo: 'dallas@practiceguardcompliance.com',
-    subject: `Your Practice Pulse results — ${lead.practice_name}`,
+    subject: `Your PracticePulse results — ${lead.practice_name}`,
     text,
   })
 }
