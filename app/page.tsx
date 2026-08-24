@@ -126,17 +126,21 @@ export default function HomePage() {
               <AlertTriangle size={14} />
               Proposed HIPAA Security Rule updates — get ahead of expected changes
             </div>
+            {/* One h1 for the whole headline. It used to be split across two
+                h1 elements so the second line could be teal, which left the page
+                with two competing top-level headings and an h1 that read as a
+                sentence fragment. Same visual result, one heading. */}
             <div className="flex items-start justify-between gap-3 mb-1 lg:mb-0">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-                Is Your Practice Ready for
+              <h1 className="flex-1 text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4 lg:mb-6">
+                Is Your Practice Ready for{' '}
+                <span className="block text-[#14b8a6]">
+                  HIPAA's Biggest Update Since 2003?
+                </span>
               </h1>
               <div className="lg:hidden flex-shrink-0 w-16 h-16 rounded-full overflow-hidden border-2 border-[#14b8a6] mt-1">
                 <img src="/dallas.jpg" alt="Dallas Mitchell" className="w-full h-full object-cover" />
               </div>
             </div>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 lg:mb-6 leading-tight text-[#14b8a6]">
-              HIPAA's Biggest Update Since 2003?
-            </h1>
             <p className="text-white/70 text-base lg:text-lg mb-8 lg:mb-10 max-w-xl">
               HHS has proposed major Security Rule updates (MFA, encryption, pen testing, and more). These are not yet final, but OCR already expects strong safeguards. Fines for small practices have ranged from $10K to $80K. We help practices get compliant — fast and affordably.
             </p>
