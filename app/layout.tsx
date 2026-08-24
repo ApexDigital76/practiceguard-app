@@ -6,7 +6,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://practiceguardcompliance.com'),
+  metadataBase: new URL('https://www.practiceguardcompliance.com'),
   title: {
     default: 'PracticeGuard Compliance Group | HIPAA Compliance for Nashville & Middle TN Practices',
     template: '%s | PracticeGuard Compliance Group',
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'PracticeGuard Compliance Group',
     description: 'HIPAA compliance and cyber insurance readiness for dental and medical practices across Middle Tennessee.',
-    url: 'https://practiceguardcompliance.com',
+    url: 'https://www.practiceguardcompliance.com',
     siteName: 'PracticeGuard Compliance Group',
     locale: 'en_US',
     type: 'website',
@@ -28,7 +28,7 @@ const localBusinessSchema = {
   '@type': 'ProfessionalService',
   name: 'PracticeGuard Compliance Group',
   description: 'HIPAA compliance, risk assessments, and cyber insurance readiness for dental and medical practices in Middle Tennessee.',
-  url: 'https://practiceguardcompliance.com',
+  url: 'https://www.practiceguardcompliance.com',
   telephone: '+16157853493',
   email: 'dallas@practiceguardcompliance.com',
   address: {
