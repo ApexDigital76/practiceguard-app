@@ -42,7 +42,7 @@ const CHANGES = [
 const SERVICES = [
   { title: 'Free Readiness Check', desc: 'Know exactly where you stand in 30 minutes.', price: 'FREE', href: '/#contact', type: 'one-time' as const },
   { title: 'Compliance Audit', desc: 'Full gap analysis + remediation roadmap.', price: '$1,997', href: '/services/compliance-audit', type: 'one-time' as const },
-  { title: 'Practice Pulse workspace', desc: 'Training, policies, BAAs & reports for your office manager.', price: 'From free', href: 'https://app.practiceguardcompliance.com', type: 'ongoing' as const },
+  { title: 'PracticePulse workspace', desc: 'Training, policies, BAAs & reports for your office manager.', price: 'From free', href: 'https://app.practiceguardcompliance.com', type: 'ongoing' as const },
   { title: 'Managed Compliance', desc: 'Ongoing monitoring + quarterly reviews.', price: 'From $675/mo', href: '/services/managed-compliance', type: 'ongoing' as const },
   { title: 'Enterprise Program', desc: 'Full compliance + cyber insurance certification.', price: 'From $1,200/mo', href: '/services/enterprise', type: 'ongoing' as const },
 ]
@@ -62,7 +62,7 @@ function ComplianceGauge() {
       </svg>
       <div className="text-center -mt-2">
         <div className="text-3xl font-bold text-[#0b2340]">45<span className="text-lg text-gray-400">/100</span></div>
-        <div className="text-xs text-gray-500 mt-1">Typical score on a first Practice Pulse Check</div>
+        <div className="text-xs text-gray-500 mt-1">Typical score on a first PracticePulse Check</div>
       </div>
     </div>
   )
@@ -174,7 +174,7 @@ export default function HomePage() {
             <h2 className="text-2xl lg:text-3xl font-bold text-[#0b2340] mb-3">Where Does Your Practice Stand?</h2>
             <p className="text-gray-600 mb-6">
               Most practices we talk to have never had a real HIPAA risk assessment. Take the free 2-minute{' '}
-              <strong>Practice Pulse Check</strong> — our practice-manager workspace product — and see your exposure score instantly. No account needed.
+              <strong>PracticePulse Check</strong> — our practice-manager workspace product — and see your exposure score instantly. No account needed.
             </p>
             <div className="grid grid-cols-3 gap-4 mb-6">
               {[
@@ -194,7 +194,7 @@ export default function HomePage() {
               rel="noopener noreferrer"
               className="inline-block bg-[#14b8a6] text-[#0b2340] font-bold px-6 py-3 rounded-lg hover:bg-[#14b8a6]/90 transition-colors"
             >
-              Take the Practice Pulse Check →
+              Take the PracticePulse Check →
             </a>
             <p className="text-xs text-gray-500 mt-2">Free 2-minute risk check — a PracticeGuard product for office managers.</p>
           </div>
@@ -221,7 +221,7 @@ export default function HomePage() {
       <section id="services" className="py-20 px-6 bg-[#0b2340]">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-white text-center mb-3">Our Services</h2>
-          <p className="text-white/50 text-center mb-10">Consulting from PracticeGuard · workspace tools via Practice Pulse</p>
+          <p className="text-white/50 text-center mb-10">Consulting from PracticeGuard · workspace tools via PracticePulse</p>
           <Tabs.Root defaultValue="one-time">
             <Tabs.List className="flex justify-center gap-2 mb-8">
               <Tabs.Trigger
@@ -485,7 +485,7 @@ export default function HomePage() {
             <p className="text-sm mt-1">
               Product:{' '}
               <a href="https://app.practiceguardcompliance.com" className="text-[#14b8a6] hover:underline" target="_blank" rel="noopener noreferrer">
-                Practice Pulse
+                PracticePulse
               </a>
               {' '}— training, policies, BAAs & reports for practice managers.
             </p>
@@ -507,7 +507,7 @@ export default function HomePage() {
             <a href="/privacy" className="hover:text-white">Privacy Policy</a>
             <a href="/#contact" className="hover:text-white">Contact</a>
             <a href="/service-areas" className="hover:text-white">Service Areas</a>
-            <a href="https://app.practiceguardcompliance.com" className="hover:text-white" target="_blank" rel="noopener noreferrer">Practice Pulse app</a>
+            <a href="https://app.practiceguardcompliance.com" className="hover:text-white" target="_blank" rel="noopener noreferrer">PracticePulse app</a>
           </div>
           <div>© {new Date().getFullYear()} PracticeGuard Compliance Group. All rights reserved.</div>
         </div>
