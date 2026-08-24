@@ -1,42 +1,23 @@
-import Image from 'next/image'
-
 interface Props {
   size?: number
   className?: string
-  /** When true, shows full lockup (mark + wordmark). Default: mark only for navbar. */
-  withWordmark?: boolean
 }
 
 /**
- * PracticeGuard logo — digital mesh tooth with ECG pulse.
- * Uses the approved brand asset in /public/media/.
+ * PracticeGuard logo — mesh tooth + pulse lockup (SVG asset).
  */
-export default function PracticeGuardLogo({
-  size = 32,
-  className = '',
-  withWordmark = false,
-}: Props) {
-  if (withWordmark) {
-    return (
-      <Image
-        src="/media/practiceguard-logo.png"
-        alt="PracticeGuard"
-        width={Math.round(size * 3.2)}
-        height={size}
-        className={className}
-        priority
-      />
-    )
-  }
-
+export default function PracticeGuardLogo({ size = 40, className = '' }: Props) {
+  const height = size
+  const width = Math.round(size * (400 / 120))
   return (
-    <Image
-      src="/media/practiceguard-logo-mark.png"
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src="/media/practiceguard-logo.svg"
       alt="PracticeGuard"
-      width={size}
-      height={size}
+      width={width}
+      height={height}
       className={className}
-      priority
+      style={{ height: size, width: 'auto' }}
     />
   )
 }
