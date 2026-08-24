@@ -34,6 +34,8 @@ export interface Lead {
   source: LeadSource
   status: LeadStatus
   notes?: string
+  score?: number
+  gaps?: string[]
   utm_source?: string
   utm_medium?: string
   utm_campaign?: string
