@@ -1,7 +1,6 @@
 'use client'
 import { useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { Menu, X } from 'lucide-react'
 
@@ -30,13 +29,13 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 bg-[#0b2340] text-white shadow-lg">
       <div className="max-w-7xl mx-auto px-6 py-3 flex items-center justify-between">
         <Link href="/" className="flex items-center hover:opacity-90 transition-opacity flex-shrink-0">
-          <Image
-            src="/media/practiceguard-logo.png"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/media/practiceguard-logo.svg"
             alt="PracticeGuard"
+            className="h-10 w-auto"
             width={180}
             height={48}
-            className="h-10 w-auto"
-            priority
           />
         </Link>
 
