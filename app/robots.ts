@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/dashboard', '/leads', '/clients', '/login'],
     },
-    sitemap: 'https://practiceguardcompliance.com/sitemap.xml',
+    sitemap: 'https://www.practiceguardcompliance.com/sitemap.xml',
   }
 }
