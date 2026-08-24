@@ -10,6 +10,44 @@ export interface BlogPost {
 
 export const POSTS: BlogPost[] = [
   {
+    slug: 'employee-offboarding-hipaa-checklist-dental-practice',
+    title: 'An Employee Just Left Your Practice. Is Your Patient Data Still Secure?',
+    metaDescription: 'What HIPAA requires when a staff member leaves your dental or medical practice, and the access-revocation steps that get missed in the rush of turnover.',
+    date: '2026-08-24',
+    readTime: '5 min read',
+    excerpt: 'A resignation, a termination, a seasonal hire who moves on — every time someone leaves your practice, they leave behind a trail of logins, badges, and app access. Here\'s what actually has to happen on their way out, and why "we\'ll get to it" is how breaches happen.',
+    body: [
+      {
+        heading: 'Offboarding is a compliance event, not just an HR one',
+        paragraphs: [
+          'When a staff member leaves, most practices handle the obvious steps — final paycheck, returning a key, an exit conversation. What frequently gets skipped is the security side: that employee likely still has an active login to the practice management system, a mobile app connected to patient scheduling, maybe VPN or remote-desktop access set up months ago for a snow day that never came. None of that disappears on its own the moment someone walks out.',
+          'HIPAA treats this as an access control failure, not an HR oversight. A former employee who can still log in — whether they ever intend to or not — means the practice no longer controls who can see protected health information, and "we forgot" is not a defense OCR accepts.',
+        ],
+      },
+      {
+        heading: 'What has to be revoked, and how fast',
+        paragraphs: [
+          'The standard is immediate revocation, ideally effective the same day employment ends — not "sometime this week" once the front desk gets around to it. That means disabling the practice management system login, removing the employee from any patient portal or texting platform, pulling building and alarm codes, collecting or remotely wiping any practice-owned device, and removing them from shared email or cloud storage accounts.',
+          'For a termination where the employee may be upset, this needs to happen before or during the exit conversation, not after — a delay of even a few hours has been the difference between a clean offboarding and an actual incident in cases HHS has investigated.',
+        ],
+      },
+      {
+        heading: 'The access practices forget to close',
+        paragraphs: [
+          'The obvious systems get remembered. What gets missed are the secondary ones: a shared password to a scheduling app that never got reset because it\'s used by three other people too, a personal phone with the practice email account still logged in from working remotely once, access to a billing portal that was set up by a vendor and never routed through the practice\'s own user list, or a former office manager who still has admin rights on the website or Google Business profile.',
+          'Any login that was ever shared instead of assigned individually is a login that\'s nearly impossible to fully close off after someone leaves — which is itself one of the more common findings when a compliance audit reviews access control.',
+        ],
+      },
+      {
+        heading: 'How to make this a checklist instead of a scramble',
+        paragraphs: [
+          'The fix is a written offboarding procedure that exists before you need it: a list of every system, app, and physical access point tied to a role, so that when someone leaves, closing access is a matter of working down a list rather than trying to remember everything from memory in the moment. Individual logins for every employee — no shared passwords — make that list actually enforceable.',
+          'Building that access inventory and offboarding checklist is part of what we set up in a compliance audit and keep current through Managed Compliance, so practices in Nashville, Hendersonville, Gallatin, Lebanon, and Mount Juliet have a same-day answer ready the next time someone hands in their badge.',
+        ],
+      },
+    ],
+  },
+  {
     slug: 'can-you-text-email-patients-hipaa-dental-practice',
     title: 'Can You Text or Email a Patient? What HIPAA Actually Allows',
     metaDescription: 'A clear breakdown of when texting or emailing patients is HIPAA-compliant, what platforms are safe, and the everyday habits that quietly create violations.',
