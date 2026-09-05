@@ -10,6 +10,44 @@ export interface BlogPost {
 
 export const POSTS: BlogPost[] = [
   {
+    slug: 'website-tracking-pixels-hipaa-violation-dental-practice',
+    title: 'Is Your Website Quietly Violating HIPAA? The Tracking Pixel Problem',
+    metaDescription: 'HHS has warned that tracking pixels and analytics tools on healthcare websites can trigger HIPAA violations. Here\'s what dental and medical practices need to check.',
+    date: '2026-09-05',
+    readTime: '5 min read',
+    excerpt: 'Most practices installed Google Analytics or a Facebook pixel years ago and never thought about it again. HHS now treats certain uses of that same tracking code as a reportable breach of patient data — here\'s what changed and how to check your own site.',
+    body: [
+      {
+        heading: 'How a marketing tool became a compliance problem',
+        paragraphs: [
+          'Tracking pixels and analytics scripts — the little snippets of code from Google, Meta, and similar platforms — are standard on almost every small business website, including dental and medical practice sites. They tell you how visitors found the site, which pages they viewed, and whether they booked an appointment. None of that sounds like a HIPAA issue on its own.',
+          'The problem is what that code actually captures. If a tracking pixel sits on a page where a visitor is logged into a patient portal, filling out a symptom or appointment-request form, or browsing a "services" page for a specific condition, it can transmit that activity — tied to an identifiable device or account — straight to Google or Meta\'s servers. HHS has stated plainly that this can count as an unauthorized disclosure of protected health information, even though no employee ever meant to share anything.',
+        ],
+      },
+      {
+        heading: 'Where this shows up on a typical practice website',
+        paragraphs: [
+          'The riskiest spots are the pages practices are proudest of: an online appointment request form that asks for a reason for the visit, a patient portal login page, a "contact us" form pre-filled with a returning patient\'s email, or a chatbot widget that logs the conversation. If a Facebook pixel or third-party analytics script is loaded on any of those pages, it can pick up form inputs, button clicks, or even the URL itself — and a URL like "/services/root-canal" visited right after someone submits their name is enough to link a person to a medical detail.',
+          'General pages — the homepage, a staff bio page, a directions page — carry far less risk, because there\'s no PHI for the tracker to capture. The exposure is concentrated almost entirely on scheduling, intake, and portal-adjacent pages.',
+        ],
+      },
+      {
+        heading: 'What HHS has actually done about it',
+        paragraphs: [
+          'This isn\'t a theoretical concern — HHS\'s Office for Civil Rights issued specific guidance on tracking technologies, and several health systems have already faced enforcement action and class-action lawsuits tied to pixels on patient-facing pages. The standard OCR applies is straightforward: if the vendor providing the tracking code isn\'t bound by a signed Business Associate Agreement, and the tracker can access PHI, the practice has an unauthorized disclosure on its hands regardless of intent.',
+          'Most ad and analytics platforms either won\'t sign a BAA at all, or only offer one under specific enterprise configurations most small practices never set up — which means the default installation most websites use is the non-compliant one.',
+        ],
+      },
+      {
+        heading: 'How to check and fix your own site',
+        paragraphs: [
+          'Start by identifying every tracking script currently installed — Google Analytics, Google Ads conversion tracking, Meta/Facebook Pixel, TikTok Pixel, and any chat or scheduling widget with its own analytics baked in. Then check whether any of them load on a patient portal login, an appointment or intake form, or any page where a visitor\'s condition or visit reason could be inferred. Where the answer is yes, the safe options are to remove the tracker from those specific pages, replace it with a HIPAA-compliant analytics tool covered by a signed BAA, or restructure the form so PHI never reaches the page where the tracker runs.',
+          'Auditing website trackers and vendor BAAs against this exact standard is part of what we review in a compliance audit and keep current through Managed Compliance, so practices in Nashville, Hendersonville, Gallatin, Lebanon, and Mount Juliet aren\'t finding out about a pixel problem from an OCR complaint instead of from us.',
+        ],
+      },
+    ],
+  },
+  {
     slug: 'employee-offboarding-hipaa-checklist-dental-practice',
     title: 'An Employee Just Left Your Practice. Is Your Patient Data Still Secure?',
     metaDescription: 'What HIPAA requires when a staff member leaves your dental or medical practice, and the access-revocation steps that get missed in the rush of turnover.',
