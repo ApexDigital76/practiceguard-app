@@ -10,6 +10,44 @@ export interface BlogPost {
 
 export const POSTS: BlogPost[] = [
   {
+    slug: 'hipaa-right-of-access-patient-records-request-dental-practice',
+    title: 'A Patient Asks for Their Records: What HIPAA\'s Right of Access Actually Requires',
+    metaDescription: 'HIPAA gives patients a legal right to their records within 30 days. Here\'s what dental and medical practices must do when a request comes in — and where they get fined.',
+    date: '2026-09-07',
+    readTime: '5 min read',
+    excerpt: 'A patient calls asking for a copy of their chart, or a new dentist\'s office faxes over a records request. It sounds routine — but HIPAA\'s Right of Access rule has a strict clock attached to it, and it\'s become one of OCR\'s favorite things to enforce.',
+    body: [
+      {
+        heading: 'The rule practices assume is optional — it isn\'t',
+        paragraphs: [
+          'Under HIPAA, patients have a legal right to see and get a copy of their own medical and dental records, and practices are required to provide it within 30 days of the request — not 30 business days, and not "whenever the office gets around to it." A single 30-day extension is allowed, but only if the practice notifies the patient in writing and explains the reason before the original deadline passes.',
+          'This applies whether the patient asks in person, by phone, in writing, or through a patient portal, and it applies regardless of whether the account has an outstanding balance. A practice cannot withhold records because a patient owes money — that\'s one of the most common mistakes offices make, and it\'s explicitly not allowed under the rule.',
+        ],
+      },
+      {
+        heading: 'Why OCR treats this as a priority, not a technicality',
+        paragraphs: [
+          'HHS\'s Office for Civil Rights has run a specific, ongoing enforcement initiative focused entirely on Right of Access complaints, and it has resulted in dozens of settlements against small healthcare providers — including dental practices — for delays as short as a few extra weeks. Unlike a data breach, these cases don\'t require a hack or a lost laptop to trigger a fine; a single frustrated patient who files a complaint after being told to "check back next month" is enough to open an investigation.',
+          'That makes this one of the easiest violations for a practice to commit without ever realizing it\'s a compliance issue at all — it usually just looks like normal front-desk backlog.',
+        ],
+      },
+      {
+        heading: 'Where practices lose track of the clock',
+        paragraphs: [
+          'The most common failure point is simply not logging when a request came in, so nobody notices the 30-day window has already closed. Right behind that: charging the patient more than the limited, cost-based fee HIPAA allows for copying and postage, which itself can be treated as an access-blocking violation. Records requests routed through a scanned fax or a general office email that isn\'t checked daily are another quiet risk, since a request can sit unseen for a week or more before anyone even starts the clock mentally.',
+          'Multi-provider practices add another wrinkle — if a patient\'s chart includes records from a specialist, hygienist, and referring provider, whoever receives the request is responsible for coordinating a complete response within the same 30-day window, not just handing over whatever piece they personally control.',
+        ],
+      },
+      {
+        heading: 'How to make this a non-issue',
+        paragraphs: [
+          'The fix is a written procedure: a single intake point for records requests (so nothing arrives through five different channels and gets missed), a log that timestamps every request the day it\'s received, a standard turnaround target well under 30 days so the extension is never needed, and a fee schedule that matches what HIPAA actually permits. Front-desk staff should also know, explicitly, that an unpaid balance is never a valid reason to delay or deny a records request.',
+          'Reviewing exactly this — the request process, the timestamp log, and the fee schedule — is part of what we check in a compliance audit and keep current through Managed Compliance, so practices in Nashville, Hendersonville, Gallatin, Lebanon, and Mount Juliet have a documented answer ready instead of a scramble the next time a records request comes in.',
+        ],
+      },
+    ],
+  },
+  {
     slug: 'website-tracking-pixels-hipaa-violation-dental-practice',
     title: 'Is Your Website Quietly Violating HIPAA? The Tracking Pixel Problem',
     metaDescription: 'HHS has warned that tracking pixels and analytics tools on healthcare websites can trigger HIPAA violations. Here\'s what dental and medical practices need to check.',
