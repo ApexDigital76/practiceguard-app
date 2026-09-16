@@ -10,6 +10,45 @@ export interface BlogPost {
 
 export const POSTS: BlogPost[] = [
   {
+    slug: 'compliance-audit-vs-managed-compliance-vs-enterprise-program',
+    title: 'Compliance Audit, Managed Compliance, or Enterprise Program: Which One Does Your Practice Actually Need?',
+    metaDescription: 'PracticeGuard offers three HIPAA service tiers. Here\'s how a dental or medical practice figures out which one actually fits its size, risk, and budget.',
+    date: '2026-09-15',
+    readTime: '5 min read',
+    excerpt: 'Every practice that calls us asks some version of the same question: do I need the one-time audit, or the ongoing service? Here\'s the honest answer, based on what actually determines the right fit — not just budget.',
+    body: [
+      {
+        heading: 'The question we get on almost every first call',
+        paragraphs: [
+          'Practice owners usually come in assuming this is a simple upgrade path — start small, move up later. It\'s a reasonable guess, but it\'s not quite how these three services work. The Compliance Audit, Managed Compliance, and Enterprise Program aren\'t "basic, better, best" versions of the same thing. They\'re built for three different situations, and the right one depends less on how much a practice wants to spend and more on how its compliance risk actually behaves day to day.',
+          'A single-dentist office with one location and a handful of long-tenured staff has a very different risk profile than a three-location group adding a new hygienist every few months. The service that fits one of those practices well can be the wrong fit — either overkill or genuinely insufficient — for the other.',
+        ],
+      },
+      {
+        heading: 'What each tier is actually built for',
+        paragraphs: [
+          'The Compliance Audit ($1,997, one-time) is a point-in-time answer: a full risk analysis, a technical and administrative review, and a written, dated report you can hand to an auditor or an insurance carrier. It\'s the right call for a stable, low-turnover practice that mainly needs to close an existing gap — an upcoming insurance renewal, a "we\'ve never actually had this done" situation, or preparation before a known event like a lease renewal or a new EHR rollout. What it doesn\'t do is stay current after delivery; the report reflects your practice on the day it was written.',
+          'Managed Compliance (from $675/mo) exists because HIPAA compliance isn\'t a document, it\'s a moving target — new hires need training, vendors change, a new laptop gets added to the network, and the 2026 Security Rule update keeps shifting what "required" means. This tier keeps the risk analysis, policies, training records, and BAA library current on an ongoing basis, which is what most single-location and small multi-location practices actually need, because the biggest compliance failures come from documentation going stale, not from never having had it in the first place.',
+          'The Enterprise Program (from $1,200/mo) is built for practices where scale itself is the risk factor — multiple locations, a larger staff roster with regular turnover, more vendors and systems in play, and often a compliance officer or office manager who needs a partner rather than a one-person job. It layers in the coordination multi-location groups need: consistent policies across sites, a single vendor and BAA inventory instead of one per location, and audit readiness that holds up when different offices are staffed differently.',
+        ],
+      },
+      {
+        heading: 'The mistake practices make in both directions',
+        paragraphs: [
+          'The most common misstep is a single-location practice buying only the one-time audit and treating it as "done forever." Six months later there\'s a new hire who never got HIPAA training, a new scheduling app with no BAA on file, and the written risk analysis no longer reflects reality — all invisible until an OCR complaint or an insurance renewal asks for current documentation, not documentation from last year.',
+          'The opposite mistake is a growing multi-location group trying to run compliance through the standard Managed Compliance tier stretched across every site with no coordination — which usually means each location ends up with its own inconsistent version of the same policy, and nobody has a single, current picture of vendor agreements or training status across the whole group.',
+        ],
+      },
+      {
+        heading: 'How to decide without guessing',
+        paragraphs: [
+          'A useful way to think about it: if your practice has one location, a stable staff, and you mainly need a current, defensible answer on file, start with the Compliance Audit and move to Managed Compliance once you know what needs to stay maintained. If you already know things change often — staff turnover, new vendors, growing patient volume — skip straight to Managed Compliance rather than paying for a snapshot that goes stale in months. If you\'re running more than one location, the Enterprise Program is almost always the right starting point, because coordinating compliance across sites after the fact is far more expensive than building it in from day one.',
+          'If you\'re still not sure which of the three actually fits, that\'s exactly what the free 30-minute readiness check is for — we look at your specific setup in Nashville, Hendersonville, Gallatin, Lebanon, or Mount Juliet and tell you honestly which tier matches your risk, instead of defaulting to whichever one is easiest to sell.',
+        ],
+      },
+    ],
+  },
+  {
     slug: 'hipaa-right-of-access-patient-records-request-dental-practice',
     title: 'A Patient Asks for Their Records: What HIPAA\'s Right of Access Actually Requires',
     metaDescription: 'HIPAA gives patients a legal right to their records within 30 days. Here\'s what dental and medical practices must do when a request comes in — and where they get fined.',
