@@ -10,6 +10,44 @@ export interface BlogPost {
 
 export const POSTS: BlogPost[] = [
   {
+    slug: 'new-employee-hipaa-training-onboarding-dental-practice',
+    title: 'Onboarding a New Hire? The HIPAA Training and Access Checklist Your Practice Needs',
+    metaDescription: 'HIPAA requires training new staff within a reasonable time of hire. Here\'s a practical onboarding checklist for dental and medical office managers.',
+    date: '2026-11-09',
+    readTime: '5 min read',
+    excerpt: 'Most practices think about HIPAA when someone leaves. The riskier moment is often the first week a new hygienist, assistant, or front desk hire logs in. Here\'s what to cover, what to document, and what to hold back until training is done.',
+    body: [
+      {
+        heading: 'Why the first week matters more than you think',
+        paragraphs: [
+          'A new hire\'s first week is usually a blur of logins, schedules, and "just watch how I do it." That\'s exactly when HIPAA habits get set. If the person training them shares a password, leaves a chart open on an unlocked screen, or texts a patient photo from a personal phone, the new employee learns that as the normal way the office works — and it sticks.',
+          'HIPAA itself is clear that training isn\'t optional. The Privacy Rule requires practices to train each new workforce member on their policies and procedures within a reasonable period of time after they join, and the Security Rule requires an ongoing security awareness program. "Workforce" includes part-time staff, temps, and even unpaid student externs — not just full-time clinical employees.',
+        ],
+      },
+      {
+        heading: 'What a new hire should be trained on',
+        paragraphs: [
+          'Generic online HIPAA videos are a start, but they don\'t cover how your office actually runs. Good onboarding training covers the basics — what counts as protected health information, the minimum necessary rule, and how to handle a patient asking for their records — and then gets specific: which systems the person will use, how your practice handles texting and email with patients, where paper records go at the end of the day, and who to tell immediately if something goes wrong, like a misdirected fax or a lost phone.',
+          'Phishing deserves its own few minutes. New employees are a favorite target because they don\'t yet know what normal internal email looks like, and a fake "IT needs your password" message lands very differently in someone\'s first week than in their third year. Show them one or two real examples of phishing emails and tell them exactly who to forward suspicious messages to.',
+        ],
+      },
+      {
+        heading: 'Access: give people only what their job needs',
+        paragraphs: [
+          'Every new hire should get their own unique login for the practice management software, the EHR or imaging system, and email — never a shared front-desk account, and never a borrowed login from the person they replaced. Unique logins are what make it possible to tell who looked at a record, which is the first thing anyone will ask after a privacy complaint.',
+          'Set access based on role, not convenience. A front desk coordinator usually doesn\'t need clinical notes; a hygienist usually doesn\'t need billing exports. It\'s also smart to hold back remote access and access to sensitive reports until training is finished and signed off. If the new hire will use a personal phone for work email or the schedule, that device needs a passcode and should be covered by your mobile device policy before it touches patient data.',
+        ],
+      },
+      {
+        heading: 'Document it, or it didn\'t happen',
+        paragraphs: [
+          'From an auditor\'s or insurance carrier\'s point of view, training you can\'t prove is training that never happened. For each new hire, keep a dated record of what training they completed, a signed acknowledgment of your HIPAA policies and confidentiality agreement, and a note of which systems they were given access to and at what level. HIPAA expects these records to be kept for six years, and the same list makes offboarding much faster and safer when that person eventually leaves.',
+          'This is one of the most common gaps we find in practices across Nashville, Hendersonville, Gallatin, Lebanon, and Mount Juliet: the training happened, but nobody can find the record. Our Managed Compliance service keeps new-hire training, acknowledgments, and access records current as your team changes, so the paperwork is ready when someone asks for it. If you\'re not sure where your practice stands, start with a free 30-minute readiness check — call (615) 785-3493 or email dallas@practiceguardcompliance.com.',
+        ],
+      },
+    ],
+  },
+  {
     slug: 'compliance-audit-vs-managed-compliance-vs-enterprise-program',
     title: 'Compliance Audit, Managed Compliance, or Enterprise Program: Which One Does Your Practice Actually Need?',
     metaDescription: 'PracticeGuard offers three HIPAA service tiers. Here\'s how a dental or medical practice figures out which one actually fits its size, risk, and budget.',
